@@ -1,0 +1,116 @@
+
+*{
+    font-family: Arial;
+}
+
+body {
+    margin: 0;
+    background: rgb(16, 1, 14);
+}
+
+/* Começo do cabeçalho */
+
+.header {
+    border-bottom: 7px solid #963ac8;
+    border-radius: 5px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.header .container {
+    justify-content: space-between;
+}
+
+.header ul #aqui {
+    font-weight: 1000;
+    color: #963ac8;
+}
+
+ul {
+    color: #963ac8;
+}
+
+a {
+    color: #963ac8;
+    text-decoration: none;
+}
+
+.titulo {
+    color: #963ac8;
+    text-shadow: 1px 4px 4px rgb(89, 12, 113);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navBar {
+    width: 600px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Fim do cabeçalho */
+
+/* Começo do Banner */
+
+.banner {
+    background-image: url("bg-jelly-fish-para_outras_pags.png");
+    height: 600px;
+    color: #fff;
+    display: flex;
+}
+
+.banner .container p span {
+    font-weight: 1000;
+    
+    
+}
+
+.banner .container {
+    font-size: 36px;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 75vh;}
+
+.banner .container p {
+    width: 30%;
+}
+
+/* Fim do banner */
+
+/* Começo do Social */
+.social {
+    background-color: rgb(74, 13, 180);
+    display: flex;
+}
+
+.box img {
+    width: 170px;
+}
+
+.social .container .boxes {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social p {
+    text-align: center;
+}
+
+/* Final do Social */
+
+
