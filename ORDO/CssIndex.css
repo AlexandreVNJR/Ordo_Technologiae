@@ -1,0 +1,339 @@
+body{
+  
+    margin: 0;
+    padding: 0;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(16, 1, 14);
+    color: beige;
+ }
+ 
+ .header{
+    border-bottom: 7px solid #963ac8;
+    border-radius: 5px;
+ }
+ 
+ .container{
+    display: flex;
+    width: 80%;
+    padding: 20px;
+ }
+ 
+ .header .container {
+    justify-content: space-between;
+ }
+ 
+ .titulo{
+ color: #963ac8;
+ text-shadow: 1px 4px 4px rgb(89, 12, 113);
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+ }
+ 
+ .navbar {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    width: 600px;
+    height: 40px;
+    color: #963ac8;
+    align-items: center;
+ }
+ 
+ .banner{
+    padding: 40px 20px 100px 10px;
+    color: #fff;
+    height: 400px;
+    background-image: url(./Energia_fundoC.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-size: 1520px;
+    /* grid-template-columns: 20rem auto */
+    /* width: 5000px; */
+    display: flex;
+    justify-content: center;
+ }
+ 
+ .banner .container {
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100%;
+ }
+ 
+ .banner .container p {
+    font-size: 40px;
+    width: 25%;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 1px 4px 4px rgb(0, 0, 0);
+ }
+ 
+ .banner .container span {
+    color: #963ac8;
+    font-weight: bold;
+ }
+ 
+ .social{
+    background-color: rgb(16, 1, 14);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 100px;
+    padding: 50px; */
+    width: 100%;
+    /* height: 20px; */
+    margin-bottom: 50px;
+   flex-direction: column;
+ }
+ 
+ .social .container{
+    align-items: center;
+    flex-direction: column;
+ }
+ 
+/* card1 */
+ .card{
+   padding: 30px;
+    /* width: 10px; */
+    text-align: center;
+    opacity: 100%;
+    /* background-color: rgba(rgb(0, 0, 0,-50%)); */
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    width: 600px;
+    border-radius: 7px;
+    color: black;
+    border: 4px solid #963ac8;
+    
+ }
+ 
+ .card img{
+    /* width: px;
+     */
+     width: 200px;
+ }
+ 
+ .card h4 {
+    font-size: 23px;
+     color: white;
+     text-shadow: 1px 4px 4px rgb(130, 6, 168);
+     
+ }
+ .card p {
+   font-size: 24px;
+   color: white;
+   text-shadow: 1px 4px 4px rgb(102, 3, 96);
+}
+
+
+/* Fundo1 */
+.section {
+   padding: 150px 0;
+   color: #000000;
+   display: flex;
+   flex-direction: column;
+   /* background-image: url(./Energia_fundoC.jpg); */
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   /* grid-template-columns: 20rem auto */
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   background-image: url(./FundoTemp.jpg);
+}
+.section2 {
+   padding: 150px 0;
+   color: #000000;
+   display: flex;
+   flex-direction: column;
+   /* background-image: url(./Energia_fundoC.jpg); */
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   /* grid-template-columns: 20rem auto */
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   background-image: url(./Personagens.jpg);
+}
+.section3 {
+   padding: 150px 0;
+   color: #000000;
+   display: flex;
+   flex-direction: column;
+   /* background-image: url(./Energia_fundoC.jpg); */
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   /* grid-template-columns: 20rem auto */
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   background-image: url(./estrangeiro.webp);
+   background-size: cover;
+}
+
+
+
+/* .FundoT .container { */
+   /* justify-content: center; */
+   /* align-items: center; */
+   /* height: 100%; */
+/* } */
+
+/* .FundoT .container p { */
+   /* font-size: 40px; */
+   /* width: 25%; */
+   /* font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+   /* text-shadow: 1px 4px 4px rgb(0, 0, 0); */
+/* } */
+
+/* .FundoT .container span { */
+   /* color: #963ac8; */
+   /* font-weight: bold; */
+/* } */
+
+
+/* Card de Temporadas */
+
+/* .cardT{
+   margin-top: 30px;
+   margin-left: 340px;
+   padding: 30px;
+    width: 10px;
+    text-align: center;
+    opacity: 100%;
+    background-image: ;
+    flex-direction: column;
+    height: 400px;
+    width: 600px;
+    border-radius: 7px;
+    color: black;
+    border: 4px solid #963ac8;
+    
+ } */
+ 
+ /* .cardT img{
+    width: px;
+    
+     height: 200px;
+ } */
+ 
+ /* .cardT h4 {
+    font-size: 23px;
+     color: white;
+     text-shadow: 1px 4px 4px rgb(130, 6, 168);
+     
+ } */
+ /* .cardT p {
+   font-size: 24px;
+   color: white;
+   text-shadow: 1px 4px 4px rgb(102, 3, 96);
+} */
+ 
+ .footer{
+    height: 100px;
+    background-color: #963ac8;
+ }
+ 
+ .footer .container{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+ }
+ 
+ .footer .container p{
+    color: #fff;
+    font-size: medium;
+ }
+ 
+ .login .container {
+    justify-content: center;
+    align-items: center;
+    background-image: url(bg-jelly-fish-para_outras_pags.png);
+    background-size: cover;
+    height: 75vh;
+ 
+ }
+ 
+
+ 
+ .card h2 {
+    color: #b33cf3;
+    -webkit-text-stroke: 1px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+    text-shadow: 1px 2px 1px rgb(73, 2, 84)
+ }
+
+
+ .campo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .campo input {
+    width: 200px;
+    padding: 7px 15px;
+    border: 2px solid #3c005c;
+    border-radius: 10px;
+ }
+
+ .formulario button{
+    margin-top: 25px;
+    padding: 10px 20px ;
+    background-color: rgb(161, 10, 255);
+    color: #FFF;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    
+ }
+
+ .header a {
+    text-decoration: none;
+    color: #963ac8   ;
+    text-shadow: 1px 4px 4px rgb(89, 12, 113);
+   
+
+ }
+
+ .agora {
+    font-weight: 1000;
+    font-size: 20px;
+    /* text-shadow: 1px 4px 4px rgb(89, 12, 113); */
+
+ }
+ .header div  a {
+   color:#963ac8;
+   text-decoration: none;
+   font-weight: bold;
+   font-family: Poppins, sans-serif;
+   transition: 0.5s;
+   align-items: end;
+   /* font-size: 20px; */
+   padding-top: 10px; 
+     
+   
+  
+}
+ .header div a:hover {
+   content: url(Ordo_Technologiae__1_-removebg-preview.png);
+   margin-top: -20%;
+    transition: 0.5s ;
+    size: 15px;
+    width: 40px;
+     margin-left: 10px;
+
+}  
+.header img{
+   opacity: 50%;
+}
+
+
+
+
