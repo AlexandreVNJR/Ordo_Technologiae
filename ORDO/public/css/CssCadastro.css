@@ -1,6 +1,6 @@
 
 *{
-    font-family: Arial;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
 }
 
 body {
@@ -59,10 +59,13 @@ a {
 /* Começo do Banner */
 
 .banner {
-    background-image: url("bg-jelly-fish-para_outras_pags.png");
+    background-image: url("../assets/fundoLog.jpg");
     height: 600px;
     color: #fff;
     display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 .banner .container p span {
@@ -115,7 +118,7 @@ a {
 
 .caixa_formulario {
     background: rgb(255, 255, 255);
-    width: 400px;
+    width: 360px;
     height: 500px;
     color: #963ac8;
     display: flex;
@@ -135,7 +138,8 @@ a {
 .formulario {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 180px;
+    
 }
 
 .formulario button {
@@ -146,7 +150,7 @@ a {
     border: none;
     width: 100px;
     border-radius: 5px;
-    margin-left: 25%;
+    margin-left: 20%;
     margin-bottom: 20px;
 }
 
@@ -177,7 +181,7 @@ a {
     font-size: medium;
  }
  .header div a:hover {
-    content: url(Ordo_Technologiae__1_-removebg-preview.png);
+    content: url('../assets/Ordo_Technologiae__1_-removebg-preview.png');
     margin-top: -20%;
      transition: 0.5s ;
      size: 15px;

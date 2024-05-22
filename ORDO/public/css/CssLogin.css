@@ -44,7 +44,7 @@ body{
     padding: 40px 20px 100px 10px;
     color: #fff;
     height: 400px;
-    background-image: url(./Energia_fundoC.jpg);
+    background-image: url(../assets/Energia_fundoC.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -117,7 +117,7 @@ body{
  .login .container {
     justify-content: center;
     align-items: center;
-    background-image: url(bg-jelly-fish-para_outras_pags.png);
+    /* background-image: url("../assets/Energia_fundoC.jpg"); */
     background-size: cover;
     height: 75vh;
  
@@ -129,14 +129,18 @@ body{
     height: 300px;
     width: 500px;
     border-radius: 7px;
-    color: black;
+    color: #963ac8;
     border: 4px solid #963ac8;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
  }
  
  .card h2 {
     color: #b33cf3;
-    -webkit-text-stroke: 1px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-    text-shadow: 1px 2px 1px rgb(73, 2, 84)
+    /* -webkit-text-stroke: 1px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+    text-shadow: 1px 2px 1px rgb(73, 2, 84) */
  }
 
 
@@ -167,7 +171,7 @@ body{
  .header a {
     text-decoration: none;
     color: #963ac8   ;
-    text-shadow: 1px 4px 4px rgb(89, 12, 113);
+    /* text-shadow: 1px 4px 4px rgb(89, 12, 113); */
    
 
  }
@@ -192,7 +196,7 @@ body{
   
 }
  .header div a:hover {
-   content: url(Ordo_Technologiae__1_-removebg-preview.png);
+   content: url(../assets/Ordo_Technologiae__1_-removebg-preview.png);
    margin-top: -20%;
     transition: 0.5s ;
     size: 15px;
