@@ -3,19 +3,24 @@ body{
     margin: 0;
     padding: 0;
     font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgb(16, 1, 14);
+    background-color: rgb(64, 8, 57);
     color: beige;
+    
  }
  
  .header{
+   display: flex;
     border-bottom: 7px solid #963ac8;
     border-radius: 5px;
+    background-color: #000000;
+    
  }
  
  .container{
     display: flex;
     width: 80%;
     padding: 20px;
+    
  }
  
  .header .container {
@@ -26,9 +31,15 @@ body{
  color: #963ac8;
  text-shadow: 1px 4px 4px rgb(89, 12, 113);
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ display: flex;
+ align-items: center;
+ 
+ 
 
  }
  
+
+
  .navbar {
     display: flex;
     flex-direction: row;
@@ -38,6 +49,8 @@ body{
     height: 40px;
     color: #963ac8;
     align-items: center;
+
+    
  }
  
  .banner{
@@ -53,6 +66,7 @@ body{
     /* width: 5000px; */
     display: flex;
     justify-content: center;
+    
  }
  
  .banner .container {
@@ -93,7 +107,7 @@ body{
  }
  
 /* card1 */
- .card{
+ .cardIdea{
    padding: 30px;
     /* width: 10px; */
     text-align: center;
@@ -109,16 +123,33 @@ body{
     color: black;
     border: 4px solid #963ac8;
     
+    
+    
  }
+ .card{
+   padding: 30px;
+    /* width: 10px; */
+    text-align: center;
+    opacity: 100%;
+    /* background-color: rgba(rgb(0, 0, 0,-50%)); */
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 1200px;
+    border-radius: 7px;
+    color: black;
+    border: 4px solid #963ac8;
+    
+    
+    
+ } 
  
- .card img{
-    /* width: px;
-     */
-     width: 200px;
- }
+ 
  
  .card h4 {
-    font-size: 23px;
+    font-size: 40px;
      color: white;
      text-shadow: 1px 4px 4px rgb(130, 6, 168);
      
@@ -127,6 +158,24 @@ body{
    font-size: 24px;
    color: white;
    text-shadow: 1px 4px 4px rgb(102, 3, 96);
+}
+.cardIdea img{
+   /* width: px;
+    */
+    width: 200px;
+    
+}
+
+.cardIdea h4 {
+   font-size: 23px;
+    color: white;
+    text-shadow: 1px 4px 4px rgb(130, 6, 168);
+    
+}
+.cardIdea p {
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 4px 4px rgb(102, 3, 96);
 }
 
 
@@ -145,6 +194,7 @@ body{
    justify-content: center;
    align-items: center;
    background-image: url(../assets/FundoTemp.jpg);
+   
 }
 .section2 {
    padding: 150px 0;
@@ -237,11 +287,16 @@ body{
 } */
  
  .footer{
-    height: 100px;
+    height: 100%;
+    display: flex;
     background-color: #963ac8;
+    align-items: center;
+    justify-content: center;
+
  }
  
  .footer .container{
+   display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -249,6 +304,9 @@ body{
  
  .footer .container p{
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: medium;
  }
  
@@ -334,6 +392,67 @@ body{
    opacity: 50%;
 }
 
+.carousel-indicators{
+   display: flex;
+   /* justify-content: start; */
+   flex-direction: row;
+   /* width: 70vw; */
 
+}
+
+.carousel-inner{
+   height: 50vh;
+   width: 40vw;
+   justify-content: start;
+
+}
+
+.item{
+   height: 50vh;
+   width: 70vw;
+   justify-content: start;
+
+}
+.sr-only{
+    display: none; 
+   color: beige;
+   width: 40px;
+
+}
+/**/
+/* .glyphicon{
+   color: beige;
+   justify-content: start;
+   width: 40vw;
+}
+.glyphicon-chevron-left{
+   color: beige;
+   justify-content: start;
+   width: 40vw;
+}
+
+.glyphicon-chevron-right{
+   color: beige;
+   justify-content: start;
+   width: 40vw;
+}  */
+.item img{
+   height: 50vh;
+   width: 40vw;
+}
+
+.left carousel-control{
+width: 40vw;
+display: flex;
+}
+
+.left carousel-control{
+   display: flex;
+   width: 40vw;
+   height: 40px;
+}
+.carousel-control.right{
+   width: 67vw;
+}
 
 

@@ -16,6 +16,7 @@ body{
     display: flex;
     width: 80%;
     margin: 0 auto;
+    
  }
  
  .header .container {
@@ -120,6 +121,13 @@ body{
     /* background-image: url("../assets/Energia_fundoC.jpg"); */
     background-size: cover;
     height: 75vh;
+    background-image: url("../assets/fundoLog.jpg");
+    height: 600px;
+    color: #fff;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
  
  }
  

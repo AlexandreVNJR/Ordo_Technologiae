@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="shortcut icon" href="../assets/Ordo_Technologiae__1_-removebg-preview.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
             <h1 class="titulo">ORDO TECHNOLOGIAE </h1>
 
             <ul class="navBar">
-                <li> <a href=".html">Home 
+                <li> <a href="index.html">Home 
                 </a></li>
                 <li >
                     <a href="s.login.html">Login</a>
@@ -140,21 +141,7 @@
     return false;
   }
 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
+  
 
   function sumirMensagem() {
     cardErro.style.display = "none";

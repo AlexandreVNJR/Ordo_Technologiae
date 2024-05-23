@@ -4,8 +4,10 @@
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(16, 1, 14);
+    color: beige;
 }
 
 .label-captura {
@@ -44,34 +46,47 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 95%;
-  border: 3px solid #e6005a;
+  border: 3px solid #963ac8;
   background-color: white;
   border-radius: 5px;
 }
 
 .dash-right .avisos .div-form button {
   /* cursor: pointer; */
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
+  color: black;
+  background-color: #963ac8;
+  width: 120px;
+}
+.dash-right .avisos .div-form button:hover {
+  /* cursor: pointer; */
+  /* font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: black;
+  background-color: #963ac8;
   width: 120px;
 }
 
+
 .publicacao-btn-editar {
   /* cursor: pointer; */
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: #963ac8;
   width: 80px;
 }
 
@@ -82,7 +97,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #963ac8;
   padding: 20px;
 }
 
@@ -120,9 +135,13 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  /* background-color: #161618; */
   height: 100vh;
   overflow: auto;
+  background-image: url(../assets/FundoQ.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 .area-parametros-alerta {
@@ -166,25 +185,6 @@ body {
   font-weight: 800;
 }
 
-.perigo-frio {
-  background-color: #5c6bc0;
-}
-
-.perigo-quente {
-  background-color: #ff7043;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
-}
 
 .cards {
   display: flex;
@@ -286,7 +286,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: #e6005a;
+  color: #963ac8;
   background-color: white;
   margin: 5px;
   border-radius: 3px;
@@ -295,11 +295,11 @@ body {
 
 .btn-pink {
   color: white;
-  background-color: #e6005a;
+  background-color: #963ac8;
 }
 
 .btn-white {
-  color: #e6005a;
+  color: #963ac8;
   background-color: white;
 
 }
@@ -348,7 +348,7 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  border-right: 3px solid #963ac8;
   background-color: #212124;
 }
 
@@ -365,7 +365,7 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #963ac8;
 }
 
 .hello {
@@ -375,19 +375,19 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #963ac8;
   font-weight: 300;
   font-size: 1.2rem;
 }
 
 .hello h3 span {
-  font-weight: 800;
+  font-weight: 1000;
 }
 
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: #963ac8;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -396,14 +396,18 @@ canvas {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid #963ac8;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
+.btn-nav-white:hover {
+  transition: 0.5s;
+  background-color: #cb81f3;
+}
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #963ac8;
   padding: 0;
   margin: 0;
 }
@@ -418,11 +422,120 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #963ac8;
   color: white;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+/* Conteúdo */
+
+.containerA{
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ flex-direction: column;
+}
+
+.socialA{
+  /* background-color: rgb(16, 1, 14); */
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 100px;
+  padding: 50px; */
+  width: 100%;
+  /* height: 20px; */
+  margin-bottom: 50px;
+ flex-direction: column;
+}
+
+.socialA .container{
+  align-items: center;
+  flex-direction: column;
+}
+
+/* card1 */
+.cardA{
+ padding: 30px;
+  /* width: 10px; */
+  text-align: center;
+  justify-content: center;
+  opacity: 100%;
+  /* background-color: rgba(rgb(0, 0, 0,-50%)); */
+  /* background-color: rgb(0, 0, 0); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: 600px;
+  border-radius: 7px;
+  color: black;
+  border: 4px solid #963ac8;
+  background-color: rgba(0, 0, 0,0.6);
+  
+}
+
+.cardA img{
+  /* width: px;
+   */
+   width: 200px;
+}
+
+.cardA h4 {
+  font-size: 23px;
+   color: white;
+   text-shadow: 1px 4px 4px rgb(130, 6, 168);
+   
+}
+.cardA p {
+ font-size: 24px;
+ color: white;
+ text-shadow: 1px 4px 4px rgb(102, 3, 96);
+ 
+}
+
+
+/* Fundo1 */
+.sectionA {
+ padding: 150px 0;
+ color: #000000;
+ display: flex;
+ flex-direction: column;
+ background-color: rgba(0, 0, 0,0.6);
+ /* opacity: 60%; */
+ /* background-image: url(./Energia_fundoC.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center center; */
+ /* grid-template-columns: 20rem auto */
+ width: 100%;
+ justify-content: center;
+ align-items: center;
+ /* background-image: url(../assets/FundoTemp.jpg); */
+}
+.sectionA .cardA h4{
+  opacity: 100%;
+}
+.sectionA2 {
+ padding: 150px 0;
+ color: #000000;
+ display: flex;
+ flex-direction: column;
+ /* background-image: url(./Energia_fundoC.jpg); */
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center center;
+ /* grid-template-columns: 20rem auto */
+ width: 100%;
+ justify-content: center;
+ align-items: center;
+ /* background-image: url(../assets/Personagens.jpg); */
 }

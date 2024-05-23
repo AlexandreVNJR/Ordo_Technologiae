@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/Ordo_Technologiae__1_-removebg-preview.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Avisos</title>
+    <title>Ordo Technologiae | Avisos</title>
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
@@ -26,29 +26,29 @@
 
         <div class="header-left">
 
-            <h1>AquaTech</h1>
+            <h1>Ordo Technologiae</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Bem-Vindo, <span id="b_usuario">Agente</span>!</h3>
             </div>
-            <div class="cpf">
+            <!-- <div class="cpf">
                 <h3>Seu CPF é <span id="b_cpf">cpf</span></h3>
-            </div>
+            </div> -->
 
             <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
+                <a href="Assistir.html">
+                    <h3>Assistir</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
+                <a href="./Quiz.html">
+                    <h3>Quiz</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
+                <h3>Chat Global</h3>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -81,7 +81,7 @@
                             </label>
                             <br>
                             <br>
-                            <button>Enviar</button>
+                            <button onclick="publicar()">Enviar</button>
                         </form>
                     </div>
                     <h1>Mural de Avisos</h1>
@@ -104,7 +104,7 @@
 <script>
     
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
+    // b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
 
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
