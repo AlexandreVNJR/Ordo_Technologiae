@@ -17,8 +17,8 @@ body {
 
 .container {
   display: flex;
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  /* margin: auto; */
 }
 
 .header {
@@ -105,7 +105,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 30px 0;
+  /* padding: 30px 0; */
 }
 
 .social p {
@@ -161,7 +161,7 @@ body {
   color: palevioletred;
   flex-direction: column;
   height: fit-content;
-  padding: 20px 0;
+  /* padding: 20px 0; */
 }
 
 .card h2 {
@@ -359,4 +359,39 @@ input {
   50%  {transform: rotate(25deg)}
   75%  {transform: rotate(-25deg)}
   100% {transform: rotate(25deg)}
+}
+.header{
+  display: flex;
+   border-bottom: 7px solid #963ac8;
+   border-radius: 5px;
+   background-color: #000000;
+   
+}
+
+
+
+.titulo{
+color: #963ac8;
+text-shadow: 1px 4px 4px rgb(89, 12, 113);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+display: flex;
+align-items: center;
+
+
+
+}
+
+
+
+.navbar {
+   display: flex;
+   flex-direction: row;
+   list-style: none;
+   justify-content: space-between;
+   width: 600px;
+   height: 40px;
+   color: #963ac8;
+   align-items: center;
+
+   
 }

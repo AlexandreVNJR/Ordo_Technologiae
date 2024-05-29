@@ -25,36 +25,29 @@
 
     <div class="janela">
 
-        <div class="header-left dash-header">
-
-            <h1>Ordo Technologiae</h1>
-
-            <div class="hello">
-                <h3>Bem-Vindo, <span id="b_usuario">Agente</span>!</h3>
+        <div class="header">
+            <div class="container">
+              <h1 class="titulo ">ORDO TECHNOLOGIAE </h1>
+              <ul class="navbar">
+                <h2>Seja Bem-Vindo, Agente</h2>
+                <li>
+                  <a href="s.login.html">Assitir</a>
+                </li>
+                <li>
+                  <a href="login.html">Personagens</a>
+                </li>
+                <li>
+                  <a href="login.html">Monstruário</a>
+                </li>
+                <li>
+                  <a href="s.login.html">Login</a>
+                </li>
+                <li>
+                  <a href="s.cadastro.html">Cadastro</a>
+                </li>
+              </ul>
             </div>
-            <!-- <div class="cpf">
-                <h3>Seu CPF é <span id="b_cpf">cpf</span></h3>
-            </div> -->
-
-            <div class="btn-nav">
-                <h3>Assitir</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./Quiz.html">
-                    <h3>Quiz</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./ChatGlobal.html">
-                    <h3>Chat Global</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+          </div>
 
         </div>
 
@@ -72,7 +65,26 @@
                   <div class="sectionA">
                     <div class="cardA">
                       <img src="SimboloMedo.webp" alt="">
-                      <h4>Assitir</h4>
+                      <h4>Assistir</h4>
+                      <p>
+                        Qual temporada deseja assistir? <select id="slct_temp">
+                            <option value="null" selected disabled>Selecione uma opção</option>
+                            <option value="iniciacao"> Iniciação </option>
+                            <option value="osnf"> O Segredo na Floresta </option>
+                            <option value="desconjuracao"> Desconjuração </option>
+                            <option value="calamidade"> Calamidade </option>
+                            <option value="osni"> O Segredo na Ilha </option>
+                            <option value="sdol"> Sinais do Outro Lado </option>
+                            <option value="qtd"> Quarentena </option>
+                        </select>  <br>
+                        Em qual episódio deseja começar a assistir? <input type="text" id="ipt_episodio"> <br>
+
+
+                        Quanto tempo você tem (em horas)? <input type="text" id="ipt_tempoUsuario"> <br>
+                        
+                         <br>
+                        <button onclick="assistir()">Assistir episódios</button>
+                        <div id="div_mensagem"></div></p>
                       </div>
                   </div>
                 </div>
@@ -110,3 +122,55 @@
 </script>
 
 </html>
+
+<script>
+    function assistir() {
+        var default_episodio = 4;
+        var msg = ``;
+
+        var episodio = Number(ipt_episodio.value);
+        var tempoUsuario = Number(ipt_tempoUsuario.value);
+        var temp = slct_temp.value;
+
+        var numeroEpisodios = tempoUsuario / default_episodio;
+
+        if (temp == iniciacao){
+            if (episodio >= 1 && episodio <= 1100){}
+        }
+        if (temp == osnf){
+            if (episodio >= 1 && episodio <= 1100){}
+        }
+        if (temp == desconjuracao){
+            if (episodio >= 1 && episodio <= 1100){}
+        }
+        if (temp == calamidade){
+            if (episodio >= 1 && episodio <= 1100){}
+        }
+        if (temp == osni){
+            if (episodio >= 1 && episodio <= 1100){}
+        }
+        if (temp == sdol){
+            if (episodio >= 1 && episodio <= 1100){}
+        }
+        if (temp == qtd){
+            if (episodio >= 1 && episodio <= 1100){}
+        }
+        
+
+
+
+        if (episodio >= 1 && episodio <= 1100) {
+            for (var cont = 0; cont < numeroEpisodios; cont++) {
+                msg += `Episódio ${episodio + cont}<br>`
+                for (var cont2 = 1; tempoUsuario > 0 && cont2 <= default_episodio; cont2++) {
+                    if (abertura == 2 && cont2 < 3) msg += `Minuto ${cont2}: Assistindo abertura <br>`
+                    else if (encerramento == 2 && (cont2 == (default_episodio - 1) || cont2 == default_episodio)) msg += `Minuto ${cont2}: Assistindo encerramento <br>`
+                    else msg += `Minuto ${cont2}: Assistindo o episódio <br>`
+                    tempoUsuario--;
+                }
+
+            } msg += `Fim dos episódios! <br> Foram assistidos: ${numeroEpisodios} episódios`
+            div_mensagem.innerHTML = msg;
+        } else alert('O número do episódio não é válido')
+    }
+</script>

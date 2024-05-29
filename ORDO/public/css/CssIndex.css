@@ -402,7 +402,7 @@ body{
 
 .carousel-inner{
    height: 50vh;
-   width: 40vw;
+   width: 10vw;
    justify-content: start;
 
 }
@@ -452,7 +452,12 @@ display: flex;
    height: 40px;
 }
 .carousel-control.right{
-   width: 67vw;
+   width: 20vw;
+   margin-right: 400px;
 }
 
+.active{
+   width: 50vw;
+   margin-right: 20vw;
+}
 
