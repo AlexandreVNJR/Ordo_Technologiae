@@ -13,10 +13,11 @@ body {
 .header {
     border-bottom: 7px solid #963ac8;
     border-radius: 5px;
+    width: 100%;
 }
 
 .container {
-    width: 80%;
+    width: 100%;
     margin: auto;
     display: flex;
 }

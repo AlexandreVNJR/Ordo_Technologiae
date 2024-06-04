@@ -19,12 +19,13 @@ body{
  .container{
     display: flex;
     width: 80%;
-    padding: 20px;
+    
+    padding: 10px;
     
  }
  
  .header .container {
-    justify-content: space-between;
+    justify-content: space-evenly;
  }
  
  .titulo{
@@ -33,35 +34,49 @@ body{
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  display: flex;
  align-items: center;
+ width: 700px;
  
  
 
  }
- 
+ /* .girar {
+  animation: girar 2s infinite linear;
+}
+@keyframes girar {
+  0% {
+    transform: rotate(0deg)
+  }
+  100%{
+    transform: rotate(180deg)
+  }
+} */
 
 
  .navbar {
     display: flex;
     flex-direction: row;
     list-style: none;
-    justify-content: space-between;
-    width: 600px;
+    justify-content: space-evenly;
+    width: 100%;
     height: 40px;
     color: #963ac8;
     align-items: center;
 
     
  }
+ /* .navbar ul{
+   padding-left: 200px;
+ } */
  
  .banner{
     padding: 40px 20px 100px 10px;
     color: #fff;
-    height: 400px;
+    height: 500px;
     background-image: url(../assets/Energia_fundoC.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-size: 1520px;
+    background-size: 15 00px;
     /* grid-template-columns: 20rem auto */
     /* width: 5000px; */
     display: flex;
