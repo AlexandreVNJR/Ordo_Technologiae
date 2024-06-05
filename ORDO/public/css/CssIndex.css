@@ -495,6 +495,7 @@ body{
  .header a {
     text-decoration: none;
     color: #963ac8   ;
+    font-size: 20px;
     text-shadow: 1px 4px 4px rgb(89, 12, 113);
    
 
@@ -502,7 +503,7 @@ body{
 
  .agora {
     font-weight: 1000;
-    font-size: 20px;
+    font-size:30px;
     text-shadow: 4px 4px 4px rgb(89, 12, 113);
 
  }
@@ -526,8 +527,8 @@ body{
    content: url("../assets/Ordo_Technologiae__1_-removebg-preview.png");
    margin-top: -20%;
     transition: 0.5s ;
-    size: 15px;
-    width: 40px;
+    size: 20px;
+    width: 50px;
      margin-left: 10px;
 
 }  

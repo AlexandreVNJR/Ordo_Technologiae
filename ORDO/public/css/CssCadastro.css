@@ -26,7 +26,7 @@ body {
 /* Começo do cabeçalho */
 
 .header {
-    border-bottom: 7px solid rgba(130, 27, 168,0.4) ;
+    border-bottom: 7px solid rgba(130, 27, 168, 0) ;
     border-radius: 10px;
     width: 100%;
     
@@ -50,7 +50,7 @@ body {
 .aqui{
     font-weight: 1000;
     font-size: 25px;
-    color: #5d12bf;
+    color: #963ac8;
     
     -webkit-text-stroke: 1px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
     text-shadow: 2px 3px 3px rgb(73, 2, 84)
@@ -60,7 +60,7 @@ ul {
 }
 
 a {
-    color: #5d12bf;
+    color: #963ac8;
     text-decoration: none;
     font-size: 20px;
     
@@ -106,8 +106,9 @@ a {
    align-items: center;
    justify-content: center;
  }   
- .navbar li a{
-    font-size: 60px;
+
+ .input{
+    color: #40127c;
  }
 
 /* Fim do cabeçalho */
@@ -253,7 +254,7 @@ a {
     transition: 1s;
 }
 .formulario select {
-    width: 20px;
+    width: 130%;
     padding: 10px 15px;
     text-align: center;
     border: 2px solid rgb(57, 0, 81);
@@ -261,7 +262,7 @@ a {
     background-color: #40127c;
 }
 .formulario select:hover {
-    width: 20px;
+    width: 130%;
     padding: 10px 15px;
     text-align: center;
     border: 2px solid rgb(57, 0, 81);
