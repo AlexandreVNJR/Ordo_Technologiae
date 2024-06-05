@@ -33,20 +33,19 @@
     <div class="janela">
         <div class="header">
             <div class="container">
-              <h1 class="titulo ">ORDO TECHNOLOGIAE </h1>
               <ul class="navbar">
-                <h2>Seja Bem-Vindo, Agente!</h2>            
+                <h2>Olhos sempre abertos, Agente!</h2>            
                 <a href="./Assistir.html">
-                    <h3>Assitir</h3>
+                    Assitir
                 </a>
-                <a href="">
+                <a class="agora">
 
-                    <h3 class="agora">Quiz</h3>
+                    Quiz
                 </a>
                 <a href="./ChatGlobal.html">
-                    <h3>Chat Global</h3>
+                    Chat Global
                 </a>
-                <h3>Sair</h3>
+                Sair
             
             </ul>
         </div>
@@ -64,6 +63,20 @@
                     </div>
                     <div class="sectionB">
                         <div class="cardB">
+                            <div id=div_questão class="questões esconder">
+                                <span id="div_span" class="questãoSpan">Pergunta</span>
+                                <div id="div_opções" class="opçoes">
+                                    <button class="resposta button">Resposta</button>
+                                    <button class="resposta button">Resposta</button>
+                                    <button class="resposta button">Resposta</button>
+                                    <button class="resposta button">Resposta</button>
+                                </div>
+                            </div>
+                            <div class="botoes">
+                                <button id="botaoComecar" class="comecar button" onclick="iniciar()">Iniciar Quiz</button>
+                                <button class="proximo button esconder">Próxima pergunta</button>
+                            </div>
+
 
 
 
@@ -81,6 +94,127 @@
 </html>
 
 <script>
+    var perguntaAtual = 0
+    function iniciar(){
+        addEventListener("click",iniciarJogo)
+    }
+    function iniciarJogo(){
+        botaoComecar.classList.add("esconder")
+        div_questão.classList.remove("esconder")
+        mostrarPróximo()
+    }
+    function mostrarPróximo(){
+        while(div_opções.firstChild){
+            div_opções.removeChild(div_opções.firstChild)
+        }
+        div_span.textContent = question[questionAtual].question
+    }
+
+
+
+    var Gabarito = [
+        {
+           question: "Quais as duas principais organizações no universo de ordem?",
+           Resposta: [
+            {text: "Ordo Veritatis e Ordo Maglitas",correct: false},
+            {text: "Ordo Realitas e Escriptas",correct: true},
+            {text: "Chitãozinho e Xororó",correct: false},
+            {text: "Ordem do mal e Ordem do bem",correct: false}
+           ]
+
+        },
+        {
+           question: "Por que os nome da Ordem é escrito em latim?",
+           Resposta: [
+            {text: "Foi fundada na itália",correct: true},
+            {text: "Um fantasma mandou",correct: false},
+            {text: "O chefe quiz",correct: false},
+            {text: "Eles gostavam de pizza",correct: false}
+           ]
+
+        },
+        {
+           question: "Qual elemento é responsável pelo tempo?",
+           Resposta: [
+            {text: "5 Elemento",correct: false},
+            {text: "Água",correct: false},
+            {text: "Morte",correct: true},
+            {text: "Energia",correct: false}
+           ]
+
+        },
+        {
+           question: '"Saber tudo é perder tudo" Esta frase faz referencia a qual elemento?',
+           Resposta: [
+            {text: "Conhecer",correct: false},
+            {text: "Conhecimento",correct: true},
+            {text: "Sangue",correct: false},
+            {text: "Fogo",correct: false}
+           ]
+
+        },
+        {
+           question: "Qual temporada se passa em 1997?",
+           Resposta: [
+            {text: "Avenida Brasil",correct: false},
+            {text: "Atividade Paranormal",correct: false},
+            {text: "Calamidade",correct: false},
+            {text: "Sinais do Outro Lado",correct: true}
+           ]
+
+        },
+        {
+           question: "Em qual temporada há uma investigação sobre um pintor que desapareceu em uma ilha?",
+           Resposta: [
+            {text: "O Segredo na Ilha",correct: true},
+            {text: "Lost",correct: false},
+            {text: "O Segredo na Floresta",correct: false},
+            {text: "Quarentena",correct: false}
+           ]
+
+        },
+        {
+           question: "Qual personagem apareceu em quatro temporadas diferentes a partir de OSNF?",
+           Resposta: [
+            {text: "Thiago Fritz",correct: false},
+            {text: "Arthur Cervero",correct: true},
+            {text: "Dante",correct: false},
+            {text: "Kaiser",correct: false}
+           ]
+
+        },
+        {
+           question: "Qual personagem se sacrificou para salvar Thiago Fritz da Aracnasita?",
+           Resposta: [
+            {text: "Sr. Veríssimo",correct: false},
+            {text: "Christopher",correct: true},
+            {text: "Joui",correct: false},
+            {text: "Jonathan Walker",correct: false}
+           ]
+
+        },
+        {
+           question: "Qual monstro é responsável por representar o elemento de morte?",
+           Resposta: [
+            {text: "Ceifador",correct: false},
+            {text: "Deus da Morte",correct: true},
+            {text: "Contra-Tempo",correct: false},
+            {text: "Ciborgue",correct: false}
+           ]
+
+        },
+        {
+           question: " Qual criatura é manifestada a partir do medo de ser seguido?",
+           Resposta: [
+            {text: "Anjo",correct: false},
+            {text: "Rastejador Sombrio",correct: true},
+            {text: "Silhueta",correct: false},
+            {text: "Magistrada",correct: false}
+           ]
+
+        }
+    ]
+
 
 
     let proximaAtualizacao;
