@@ -17,7 +17,6 @@
     <!-- Nosso cabeçalho -->
     <div class="header">
         <div class="container">
-            <h1 class="titulo">ORDO TECHNOLOGIAE </h1>
 
             <ul class="navBar">
                 <li> <a href="index.html">Home 
@@ -25,7 +24,7 @@
                 <li >
                     <a href="s.login.html">Login</a>
                 </li>   
-                <li id="aqui">Cadastro</li>
+                <li class="aqui">Cadastro</li>
             </ul>
         </div>
 
@@ -38,24 +37,48 @@
             <div class="caixa_formulario">
                 <h1>Bem-Vindo!</h1>
                 <div class="formulario">
-                    <div class="campo">
-                        <span>Nome:</span>
-                        <input id="nome_input" type="text" placeholder="Seu E-mail">
+                    <div class="campo elemento">
+                        <span>Codinome:</span>
+                        <input id="nome_input" type="text" placeholder="SEU CODINOME">
                     </div>
-                    <div class="campo">
+                    <div class="campo elemento">
                         <span>E-mail:</span>
-                        <input id="email_input" type="email" placeholder="Seu E-mail">
+                        <input id="email_input" type="email" placeholder="SEU E-MAIL">
                     </div>
-                    <div class="campo">
+                    <div class="campo elemento">
+                      <span>Temporada preferida:</span>
+                      <select  id="temp_select">
+                        <option disabled selected>SELECIONE UMA TEMPORADA</option>
+                        <option>Iniciação</option>
+                        <option>O Segredo na Floresta</option>
+                        <option>Desconjuração</option>
+                        <option>Calamidade</option>
+                        <option>O Segredo na Ilha</option>
+                        <option>Sinais do Outro Lado</option>
+                        <option>Quarentena</option>
+                      </select>
+                  </div>
+                  <div class="campo elemento">
+                    <span>Arquétipo:</span>
+                    <select  id="temp_select">
+                      <option disabled selected>SELECIONE UM ARQUÉTIPO</option>
+                      <option>Combatente</option>
+                      <option>Especialista</option>
+                      <option>Ocultista</option>
+                    </select>
+                </div>
+
+                    <div class="campo elemento">
                         <span>Senha:</span>
                         <input id="senha_input" type="password" placeholder="*****">
                     </div>
-                    <div class="campo">
+                    <div class="campo elemento">
                         <span>Confirmação de Senha:</span>
                         <input id="Confsenha_input" type="password" placeholder="*****">
                     </div>
-
+                    
                     <button onclick="cadastrar()">Cadastrar</button>
+                    
                 </div>
             </div>
         </div>

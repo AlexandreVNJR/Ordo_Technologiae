@@ -5,15 +5,31 @@
 
 body {
     margin: 0;
-    background: rgb(16, 1, 14);
+    /* background: rgb(16, 1, 14); */
+    background-image: url("../assets/fundoLog.jpg");
+
 }
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgb(179, 2, 255);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(71, 0, 93);
+    border-radius: 20px;
+    border: 3px solid rgb(137, 2, 158);
+  }
 
 /* Começo do cabeçalho */
 
 .header {
-    border-bottom: 7px solid #963ac8;
-    border-radius: 5px;
+    border-bottom: 7px solid rgba(130, 27, 168,0.4) ;
+    border-radius: 10px;
     width: 100%;
+    
 }
 
 .container {
@@ -26,18 +42,32 @@ body {
     justify-content: space-between;
 }
 
-.header ul #aqui {
-    font-weight: 1000;
+/* .header ul .aqui {
+    font-weight: 10000;
     color: #963ac8;
+    font-size: 30;
+} */
+.aqui{
+    font-weight: 1000;
+    font-size: 25px;
+    color: #5d12bf;
+    
+    -webkit-text-stroke: 1px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+    text-shadow: 2px 3px 3px rgb(73, 2, 84)
 }
-
 ul {
     color: #963ac8;
 }
 
 a {
-    color: #963ac8;
+    color: #5d12bf;
     text-decoration: none;
+    font-size: 20px;
+    
+   font-weight: bold;
+   font-family: Poppins, sans-serif;
+    -webkit-text-stroke: 2px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+    text-shadow: 3px 4px 3px rgb(73, 2, 84)
 }
 
 .titulo {
@@ -47,20 +77,44 @@ a {
 }
 
 .navBar {
-    width: 600px;
+    /* width: 600px; */
     padding: 0;
+    margin-bottom: 20px;
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    /* color: #963ac8; */
 }
+/* .navbar {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    width: 100%;
+    height: 40px;
+    color: #963ac8;
+    align-items: center;
+ }
+*/
+  .navbar p{
+   display: flex;
+   padding: 10%;
+   align-items: center;
+   justify-content: center;
+ }   
+ .navbar li a{
+    font-size: 60px;
+ }
 
 /* Fim do cabeçalho */
 
 /* Começo do Banner */
 
 .banner {
-    background-image: url("../assets/fundoLog.jpg");
     height: 600px;
     color: #fff;
     display: flex;
@@ -83,7 +137,7 @@ a {
     height: 75vh;}
 
 .banner .container p {
-    width: 30%;
+    width: 100%;
 }
 
 /* Fim do banner */
@@ -105,10 +159,12 @@ a {
 }
 
 .box {
-    margin-top: 50px;
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 .social p {
@@ -118,9 +174,11 @@ a {
 /* Final do Social */
 
 .caixa_formulario {
-    background: rgb(255, 255, 255);
-    width: 360px;
-    height: 500px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    width: 40%;
+    height: 550px;
     color: #963ac8;
     display: flex;
     flex-direction: column;
@@ -130,6 +188,21 @@ a {
     /* opacity: 80%; */
     border: 4px solid #963ac8;
     border-radius: 2px;
+    padding: 10px;
+}
+
+.container .caixa_formulario{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+.container .elemento{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 20px 20px 20px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin-left: 295px;
 }
 
 .caixa_formulario h1 {
@@ -141,6 +214,15 @@ a {
     flex-direction: column;
     width: 180px;
     
+    
+}
+.caixa_formulario p{
+    display: flex;
+    font-size: medium;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    /* line-height: 5px; */
 }
 
 .formulario button {
@@ -158,23 +240,55 @@ a {
 .formulario input {
     padding: 10px 15px;
     text-align: center;
-    border: 2px solid rgb(82, 143, 196);
+    border: 2px solid rgb(57, 0, 81);
     border-radius: 10px;
+    background-color: #40127c;
+}
+.formulario input:hover {
+    padding: 10px 15px;
+    text-align: center;
+    border: 2px solid rgb(57, 0, 81);
+    border-radius: 10px;
+    background-color: #9e5af8;
+    transition: 1s;
+}
+.formulario select {
+    width: 20px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 2px solid rgb(57, 0, 81);
+    border-radius: 10px;
+    background-color: #40127c;
+}
+.formulario select:hover {
+    width: 20px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 2px solid rgb(57, 0, 81);
+    border-radius: 10px;
+    background-color: #ac6dff;
+}
+.formulario  input::placeholder{
+    color: #963ac8;
 }
 
 .formulario span {
-    font-size: 19px;
+    font-size: 22px;
+    
+    font-weight: bold;
 }
 
 .footer{
     height: 100px;
     background-color: #963ac8;
+    opacity: 80%;
  }
  
  .footer .container{
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin-top: 0.4%;
  }
  
  .footer .container p{
