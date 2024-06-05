@@ -28,7 +28,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body>
+<body class="">
 
     <div class="janela">
         <div class="header">
@@ -38,7 +38,7 @@
                 <a href="./Assistir.html">
                     Assitir
                 </a>
-                <a class="agora">
+                <a class=" agora">
 
                     Quiz
                 </a>
@@ -52,30 +52,31 @@
     </div>
 
         </div>
-        <div class="dash">
-            <div class="socialA">
-                <div class="containerA">
-                    <div class="cardA">
+        <div class=" dash">
+            <div class=" socialA">
+                <div class=" containerA">
+                    <div class=" cardA">
                         <h4>Como Funciona?</h4>
                         <p> Para validar os conhecimentos do usuário sobre o universo de Ordem Paranomal ele poderá
                             responder questões relacionadas ao tema e verificar se precisa revisar os conteúdos do site.
                         </p>
                     </div>
-                    <div class="sectionB">
-                        <div class="cardB">
-                            <div id=div_questão class="questões esconder">
-                                <span id="div_span" class="questãoSpan">Pergunta</span>
-                                <div id="div_opções" class="opçoes">
-                                    <button class="resposta button">Resposta</button>
-                                    <button class="resposta button">Resposta</button>
-                                    <button class="resposta button">Resposta</button>
-                                    <button class="resposta button">Resposta</button>
+                    <div class=" sectionB">
+                        <div class=" cardB">
+                            <div class=" questions-container hide">
+                                <span class=" question">Pergunta</span>
+                                <div class=" answers-container">
+                                    <button class=" answer button">Resposta</button>
+                                    <button class=" answer button">Resposta</button>
+                                    <button class=" answer button">Resposta</button>
+                                    <button class=" answer button">Resposta</button>
                                 </div>
                             </div>
-                            <div class="botoes">
-                                <button id="botaoComecar" class="comecar button" onclick="iniciar()">Iniciar Quiz</button>
-                                <button class="proximo button esconder">Próxima pergunta</button>
+                            <div class=" controls-container">
+                                <button class=" start-quiz button" onclick="startGame()">Iniciar Quiz</button>
+                                <button class=" next-question button hide">Próxima pergunta</button>
                             </div>
+                           
 
 
 
@@ -94,28 +95,35 @@
 </html>
 
 <script>
-    var perguntaAtual = 0
-    function iniciar(){
-        addEventListener("click",iniciarJogo)
+    const $startGameButton = document.querySelector(".start-quiz")
+    const $questionsContainer = document.querySelector(".question-container")
+    const $answersContainer = document.querySelector(".answers-container")
+    const $questionText = document.querySelector(".question")
+
+    $startGameButton.addEventListener("click",startGame)
+
+    let currentQuestionIndex = 0
+
+    function startGame(){
+        $startGameButton.classList.add("hide")
+        $questionsContainer.classList.remove("hide")
+        displayNextQuestion()
     }
-    function iniciarJogo(){
-        botaoComecar.classList.add("esconder")
-        div_questão.classList.remove("esconder")
-        mostrarPróximo()
-    }
-    function mostrarPróximo(){
-        while(div_opções.firstChild){
-            div_opções.removeChild(div_opções.firstChild)
+    function displayNextQuestion(){
+        while($answersContainer.firstChild){
+            $answersContainer.removeChild($answersContainer.firstChild)
         }
-        div_span.textContent = question[questionAtual].question
+
+        $questionText.textContent = questions(currentQuestionIndex).question
     }
 
 
+    
 
-    var Gabarito = [
+    const questions = [
         {
            question: "Quais as duas principais organizações no universo de ordem?",
-           Resposta: [
+           answer: [
             {text: "Ordo Veritatis e Ordo Maglitas",correct: false},
             {text: "Ordo Realitas e Escriptas",correct: true},
             {text: "Chitãozinho e Xororó",correct: false},
@@ -125,7 +133,7 @@
         },
         {
            question: "Por que os nome da Ordem é escrito em latim?",
-           Resposta: [
+           answer: [
             {text: "Foi fundada na itália",correct: true},
             {text: "Um fantasma mandou",correct: false},
             {text: "O chefe quiz",correct: false},
@@ -135,7 +143,7 @@
         },
         {
            question: "Qual elemento é responsável pelo tempo?",
-           Resposta: [
+           answer: [
             {text: "5 Elemento",correct: false},
             {text: "Água",correct: false},
             {text: "Morte",correct: true},
@@ -145,7 +153,7 @@
         },
         {
            question: '"Saber tudo é perder tudo" Esta frase faz referencia a qual elemento?',
-           Resposta: [
+           answer: [
             {text: "Conhecer",correct: false},
             {text: "Conhecimento",correct: true},
             {text: "Sangue",correct: false},
@@ -155,7 +163,7 @@
         },
         {
            question: "Qual temporada se passa em 1997?",
-           Resposta: [
+           answer: [
             {text: "Avenida Brasil",correct: false},
             {text: "Atividade Paranormal",correct: false},
             {text: "Calamidade",correct: false},
@@ -165,7 +173,7 @@
         },
         {
            question: "Em qual temporada há uma investigação sobre um pintor que desapareceu em uma ilha?",
-           Resposta: [
+           answer: [
             {text: "O Segredo na Ilha",correct: true},
             {text: "Lost",correct: false},
             {text: "O Segredo na Floresta",correct: false},
@@ -175,7 +183,7 @@
         },
         {
            question: "Qual personagem apareceu em quatro temporadas diferentes a partir de OSNF?",
-           Resposta: [
+           answer: [
             {text: "Thiago Fritz",correct: false},
             {text: "Arthur Cervero",correct: true},
             {text: "Dante",correct: false},
@@ -185,7 +193,7 @@
         },
         {
            question: "Qual personagem se sacrificou para salvar Thiago Fritz da Aracnasita?",
-           Resposta: [
+           answer: [
             {text: "Sr. Veríssimo",correct: false},
             {text: "Christopher",correct: true},
             {text: "Joui",correct: false},
@@ -195,7 +203,7 @@
         },
         {
            question: "Qual monstro é responsável por representar o elemento de morte?",
-           Resposta: [
+           answer: [
             {text: "Ceifador",correct: false},
             {text: "Deus da Morte",correct: true},
             {text: "Contra-Tempo",correct: false},
@@ -205,7 +213,7 @@
         },
         {
            question: " Qual criatura é manifestada a partir do medo de ser seguido?",
-           Resposta: [
+           answer: [
             {text: "Anjo",correct: false},
             {text: "Rastejador Sombrio",correct: true},
             {text: "Silhueta",correct: false},
@@ -213,11 +221,10 @@
            ]
 
         }
-    ]
+    ];
 
+    
 
-
-    let proximaAtualizacao;
 
     window.onload = exibirAquariosDoUsuario(), validarSessao();
 
@@ -225,7 +232,7 @@
         var aquarios = JSON.parse(sessionStorage.AQUARIOS);
         aquarios.forEach(item => {
             document.getElementById("btnAquario").innerHTML += `
-            <button class="btn-chart" onclick="exibirAquario(${item.id})" id="btnAquario${item.id}">${item.descricao}</button>
+            <button class="  btn-chart" onclick="exibirAquario(${item.id})" id="btnAquario${item.id}">${item.descricao}</button>
             `
 
             document.getElementById("graficos").innerHTML += `

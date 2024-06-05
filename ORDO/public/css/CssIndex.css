@@ -12,6 +12,7 @@ body{
     
  }
 
+ 
  *::-webkit-scrollbar {
    width: 12px;
  }
@@ -33,6 +34,16 @@ body{
     background-color: rgba(0, 0, 0, 0.316)
     
  }
+  /* .girar {
+  animation: girar 2s infinite linear;
+}
+@keyframes girar {
+  0% {
+    transform: rotate(0deg)
+  }
+  100%{
+    transform: rotate(180deg)
+  }} */
  
  .container{
     display: flex;

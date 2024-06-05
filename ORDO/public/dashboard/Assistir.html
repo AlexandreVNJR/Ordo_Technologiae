@@ -26,7 +26,6 @@
 
         <div class="header">
             <div class="container">
-              <h1 class="titulo ">ORDO TECHNOLOGIAE </h1>
               <ul class="navbar">
                 <h2>Olhos sempre abertos, Agente!</h2>
                 <li>
@@ -65,22 +64,22 @@
                       <p>
 
                         Qual temporada deseja assistir? <select id="slct_temp">
-                            <option value="null" selected disabled>Selecione uma opção</option>
-                            <option value="iniciacao"> Iniciação </option>
-                            <option value="osnf"> O Segredo na Floresta </option>
-                            <option value="desconjuracao"> Desconjuração </option>
-                            <option value="calamidade"> Calamidade </option>
-                            <option value="osni"> O Segredo na Ilha </option>
-                            <option value="sdol"> Sinais do Outro Lado </option>
-                            <option value="qtd"> Quarentena </option>
+                            <option class="elemento" value="null" selected disabled>Selecione uma opção</option>
+                            <option class="elemento" value="iniciacao"> Iniciação </option>
+                            <option class="elemento" value="osnf"> O Segredo na Floresta </option>
+                            <option class="elemento" value="desconjuracao"> Desconjuração </option>
+                            <option class="elemento" value="calamidade"> Calamidade </option>
+                            <option class="elemento" value="osni"> O Segredo na Ilha </option>
+                            <option class="elemento" value="sdol"> Sinais do Outro Lado </option>
+                            <option class="elemento" value="qtd"> Quarentena </option>
                         </select>  <br>
-                        Em qual episódio deseja começar a assistir? <input type="text" id="ipt_episodio"> <br>
+                        Em qual episódio deseja começar a assistir? <input class="elemento" type="text" id="ipt_episodio"> <br>
 
 
-                        Quanto tempo você tem (em horas)? <input type="text" id="ipt_tempoUsuario"> <br>
+                        Quanto tempo você tem (em horas)? <input class="elemento" type="text" id="ipt_tempoUsuario"> <br>
                         
                          <br>
-                        <button onclick="assistir()">Assistir episódios</button>
+                        <button class="elemento" onclick="assistir()">Assistir episódios</button>
                         <div id="div_mensagem"></div></p>
                       </div>
                   </div>
@@ -132,25 +131,46 @@
         var numeroEpisodios = tempoUsuario / default_episodio;
 
         if (temp == iniciacao){
-            if (episodio >= 1 && episodio <= 1100){}
+            if (episodio >= 1 && episodio <= 1100){
+            }else{
+                div_mensagem.innerHTML = `Insira um episódio válido`
+            }
         }
         if (temp == osnf){
-            if (episodio >= 1 && episodio <= 1100){}
+            if (episodio >= 1 && episodio <= 1100){
+            }else{
+                div_mensagem.innerHTML = `Insira um episódio válido`
+            }
         }
         if (temp == desconjuracao){
-            if (episodio >= 1 && episodio <= 1100){}
+            if (episodio >= 1 && episodio <= 1100){
+            }else{
+                div_mensagem.innerHTML = `Insira um episódio válido`
+            }
         }
         if (temp == calamidade){
-            if (episodio >= 1 && episodio <= 1100){}
+            if (episodio >= 1 && episodio <= 1100){
+            }else{
+                div_mensagem.innerHTML = `Insira um episódio válido`
+            }
         }
         if (temp == osni){
-            if (episodio >= 1 && episodio <= 1100){}
+            if (episodio >= 1 && episodio <= 1100){
+            }else{
+                div_mensagem.innerHTML = `Insira um episódio válido`
+            }
         }
         if (temp == sdol){
-            if (episodio >= 1 && episodio <= 1100){}
+            if (episodio >= 1 && episodio <= 1100){
+            }else{
+                div_mensagem.innerHTML = `Insira um episódio válido`
+            }
         }
         if (temp == qtd){
-            if (episodio >= 1 && episodio <= 1100){}
+            if (episodio >= 1 && episodio <= 1100){
+            }else{
+                div_mensagem.innerHTML = `Insira um episódio válido`
+            }
         }
         
 
