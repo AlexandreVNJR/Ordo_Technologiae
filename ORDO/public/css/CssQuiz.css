@@ -38,7 +38,31 @@ body {
 .button{
   cursor: pointer;
 }
-.questãoSpan{
+
+.correct{
+  background-image: url(../assets/FundoCerto.png);
+  background-color: green;
+  background-size: cover;
+  color: green;
+  transition: 1.5s;
+  
+}
+
+.incorrect{
+
+  background-image: url(../assets/FundoErrado.png);
+  background-size: cover;
+  background-color: red;
+  color: red;
+  transition: 1.5s;
+
+}
+.answer:disabled{
+  cursor: not-allowed;
+  
+}
+
+.question{
   color: #FFF;
   height: 100vh;
   display: flex;
@@ -49,13 +73,14 @@ body {
   text-align: center;
 
 }
-.question-container{
+.questions-container{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 24px;
+  height: 40%;
 }
 .answers-container{
   width: 100%;
@@ -76,12 +101,17 @@ body {
   height: 48px;
   padding: 0 32px;
 }
-.button:hover{
+.button:not(:disabled):hover{
   filter: brightness(1.8);
   transition: 1.5s;
 }
 .hide{
-  /* display: none; */
+  display: none;
+}
+.start-quiz{
+  width: 300px;
+  height: 200px;
+  font-size: 50px;
 }
 
 .dash-right .avisos {
@@ -550,7 +580,7 @@ canvas {
    display: flex;
    flex-direction: column;
    align-items: center;
-   height: 600px;
+   height: 400px;
    width: 40%;
    border-radius: 7px;
    /* color: black; */
@@ -622,6 +652,7 @@ canvas {
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-right:20px;
  }
  .sectionB .cardB h4{
    opacity: 100%;
@@ -647,6 +678,9 @@ body {
     display: flex;
     width: 90%;
     margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .header {

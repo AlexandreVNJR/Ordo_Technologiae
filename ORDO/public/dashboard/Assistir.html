@@ -72,11 +72,11 @@
                             <option class="elemento" value="osni"> O Segredo na Ilha </option>
                             <option class="elemento" value="sdol"> Sinais do Outro Lado </option>
                             <option class="elemento" value="qtd"> Quarentena </option>
-                        </select>  <br>
-                        Em qual episódio deseja começar a assistir? <input class="elemento" type="text" id="ipt_episodio"> <br>
+                        </select>  <br><br>
+                        Qual episódio deseja assistir? <input class="elemento" type="text" id="ipt_episodio" placeholder="Número do Episódio"> <br><br>
 
 
-                        Quanto tempo você tem (em horas)? <input class="elemento" type="text" id="ipt_tempoUsuario"> <br>
+                        Quanto tempo você tem (em horas)? <input class="elemento" type="text" id="ipt_tempoUsuario" placeholder="Exemplo 2.4"> <br>
                         
                          <br>
                         <button class="elemento" onclick="assistir()">Assistir episódios</button>
@@ -119,75 +119,92 @@
 
 </html>
 
+
 <script>
+        const listaEps_Iniciacao = [5.5, 3.3, 3.5];
+        const listaEps_Onsf = [4, 4.4, 4, 4, 4.3, 4.4, 4, 4, 3.4, 3.4, 3.5, 3.3, 3.3, 3.1, 3.4, 3.3];
+        const listaEps_Desconjuracao = [3.5, 4.2, 4.2, 3.4, 4, 6.2, 4.3, 3.4, 4.1, 4.3, 3.5, 3.4, 4.2, 3.3, 3.4, 4.1, 4, 4.4, 4.5, 4.2];
+        const listaEps_Calamidade = [4.2, 3, 5, 3.5, 4, 4.1, 5, 5, 4.3, 3.4, 4.4, 4, 4.2];
+
+        const listaEps_Osni = [4.5, 4.5, 5.2, 5.2, 4.5, 4.4, 5.2, 3.2];
+        const listaEps_Sdol = [4.4, 4.5, 4.1, 4.2, 4, 4, 4.1];
+        const listaEps_Quarentena = [5.4, 5.3];
+
     function assistir() {
-        var default_episodio = 4;
+        var tempoMedioEP = 4;
         var msg = ``;
+        
 
         var episodio = Number(ipt_episodio.value);
         var tempoUsuario = Number(ipt_tempoUsuario.value);
+        var minutosUsuário = tempoUsuario *60;
         var temp = slct_temp.value;
 
-        var numeroEpisodios = tempoUsuario / default_episodio;
+        var numeroEpisodios = tempoUsuario / tempoMedioEP;
 
-        if (temp == iniciacao){
-            if (episodio >= 1 && episodio <= 1100){
+        if (temp == "iniciacao"){
+            if (episodio >= 1 && episodio <= 3){ 
+                 var tempoCorrespondente = listaEps_Iniciacao.indexOf(episodio)
+                 console.log(tempoCorrespondente)   
+
+                
+
+
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == osnf){
-            if (episodio >= 1 && episodio <= 1100){
+        if (temp == "osnf"){
+            if (episodio >= 1 && episodio <= 16){
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == desconjuracao){
-            if (episodio >= 1 && episodio <= 1100){
+        if (temp == "desconjuracao"){
+            if (episodio >= 1 && episodio <= 20){
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == calamidade){
-            if (episodio >= 1 && episodio <= 1100){
+        if (temp == "calamidade"){
+            if (episodio >= 0 && episodio <= 12){
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == osni){
-            if (episodio >= 1 && episodio <= 1100){
+        if (temp == "osni"){
+            if (episodio >= 1 && episodio <= 8){
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == sdol){
-            if (episodio >= 1 && episodio <= 1100){
+        if (temp == "sdol"){
+            if (episodio >= 1 && episodio <= 7){
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == qtd){
-            if (episodio >= 1 && episodio <= 1100){
+        if (temp == "qtd"){
+            if (episodio >= 1 && episodio <= 2){
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
         
+            // for(var index = episodio-1; index>=episodio; index++){
+                //     listaEps_Iniciacao.indexOf[]
+                // }
 
+            //     for (var cont = 0; cont < numeroEpisodios; cont++) {
+            //     msg += `Episódio ${episodio + cont}<br>`
+            //     for (var cont2 = 1; tempoUsuario > 0 && cont2 <= tempoMedioEP; cont2++) {
+            //         if (abertura == 2 && cont2 < 3) msg += `Minuto ${cont2}: Assistindo abertura <br>`
+            //         else if (encerramento == 2 && (cont2 == (tempoMedioEP - 1) || cont2 == tempoMedioEP)) msg += `Minuto ${cont2}: Assistindo encerramento <br>`
+            //         else msg += `Minuto ${cont2}: Assistindo o episódio <br>`
+            //         tempoUsuario--;
+            //     }
 
-
-        if (episodio >= 1 && episodio <= 1100) {
-            for (var cont = 0; cont < numeroEpisodios; cont++) {
-                msg += `Episódio ${episodio + cont}<br>`
-                for (var cont2 = 1; tempoUsuario > 0 && cont2 <= default_episodio; cont2++) {
-                    if (abertura == 2 && cont2 < 3) msg += `Minuto ${cont2}: Assistindo abertura <br>`
-                    else if (encerramento == 2 && (cont2 == (default_episodio - 1) || cont2 == default_episodio)) msg += `Minuto ${cont2}: Assistindo encerramento <br>`
-                    else msg += `Minuto ${cont2}: Assistindo o episódio <br>`
-                    tempoUsuario--;
-                }
-
-            } msg += `Fim dos episódios! <br> Foram assistidos: ${numeroEpisodios} episódios`
-            div_mensagem.innerHTML = msg;
-        } else alert('O número do episódio não é válido')
+            // } msg += `Fim dos episódios! <br> Foram assistidos: ${numeroEpisodios} episódios`
+            // div_mensagem.innerHTML = msg;
     }
 </script>
