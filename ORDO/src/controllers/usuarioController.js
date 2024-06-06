@@ -57,6 +57,8 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     // var cpf = req.body.cpfServer;
     var email = req.body.emailServer;
+    var tempPref = req.body.tempPrefServer;
+    var arquetipo = req.body.arquetipoServer;
     var senha = req.body.senhaServer;
     // var empresaId = req.body.empresaServer;
 
@@ -66,6 +68,12 @@ function cadastrar(req, res) {
     // }else  if (cpf == undefined) {
     //     res.status(400).send("Seu cpf está undefined!");
     // }  
+    else if(tempPref == undefined){
+        res.status(400).send("Seu tempPref está undefíned!")
+    }
+    else if(arquetipo == undefined){
+        res.status(400).send("Seu arquetipo está undefíned!")
+    }
     else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
@@ -75,8 +83,9 @@ function cadastrar(req, res) {
     // } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nome, email,tempPref, arquetipo, senha)
             .then(
+                // resultado é o que a gente inseriu
                 function (resultado) {
                     res.json(resultado);
                 }

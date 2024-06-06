@@ -60,7 +60,7 @@
                   </div>
                   <div class="campo elemento">
                     <span>Arquétipo:</span>
-                    <select  id="temp_select">
+                    <select  id="aquetipo_select">
                       <option disabled selected>SELECIONE UM ARQUÉTIPO</option>
                       <option>Combatente</option>
                       <option>Especialista</option>
@@ -102,63 +102,83 @@
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
+    
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
+    var tempPref = temp_select.value;
+    var arquetipo = aquetipo_select.value;
     var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var confirmacaoSenhaVar = Confsenha_input.value;
     
     if( 
       nomeVar == "" ||
       emailVar == "" ||
+      tempPref == "" ||
+      arquetipo == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" 
     ){
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML =
+      //   "(Mensagem de erro para todos os campos em branco)";
 
-      finalizarAguardar();
+      // finalizarAguardar();
+      alert("Preencha todos os campos")
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
     }
+    // else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
+
 
     // Enviando o valor da nova input
+    // eu não sou mestre do fecth
+    // no arquiv usuários a rota cadastrar
     fetch("/usuarios/cadastrar", {
+      //método dessa fetch , insert, postar
       method: "POST",
+
       headers: {
         "Content-Type": "application/json",
       },
+
+      //permite mandar valores
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
+        tempPrefServer:tempPref, 
+        arquetipoServer:arquetipo, 
         senhaServer: senhaVar,
       }),
     })
+    //acontece depois da rota
+    // resultado tranformado em json
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
+          // cardErro.style.display = "block";
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          // mensagem_erro.innerHTML =
+          //   "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
 
           setTimeout(() => {
             window.location = "login.html";
           }, "2000");
 
           limparFormulario();
-          finalizarAguardar();
+          // finalizarAguardar();
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+          alert( "Houve um erro ao tentar realizar o cadastro!");
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+        // finalizarAguardar();
       });
 
     return false;
