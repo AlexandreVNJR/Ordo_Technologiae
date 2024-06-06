@@ -61,21 +61,25 @@ body{
    width: 100%;
    /* height: 500px; */
  }
- .Imagens img{
+ .Imagens a img{
    width: 100%;
-   height: 200px;
+   height: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: row;
  }
- .imagemRow{
-   display: flex;
+ .imagemRow p{
+   display: none;
+   color: red;
    width: 100%;
-   flex-direction: row;
-   height: 100%;
-   border: #ffffff;
-   border-radius: 50px;
+   font-weight: bold;
+   font-size: 30px;
+   position: relative;
+   top: -4em;
+   left: 4em;
+   pointer-events: none;
+   transition: 2s;
  }
  
  .header .container {
@@ -234,15 +238,15 @@ body{
    transition: all 300ms ease;
   }
   
-  .imagemRow:hover  .comentario{
+   /* .imagemRow:hover  .comentario{
         opacity: 1;
         transform: scale(1.1)
-  }
-  .imagemRow:hover  {
-   opacity: 1;
-   transition: 1s;
-   transform: scale(1.3)
-}
+  } */
+  .imagemRow:hover p {
+   transition: 2s;
+   display: block;
+   transform: scale(1.1)
+} 
 
  
 /* card1 */
