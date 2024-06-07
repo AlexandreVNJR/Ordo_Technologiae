@@ -15,18 +15,18 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: rgb(179, 2, 255);
+  background: rgb(16, 78, 0);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgb(71, 0, 93);
+  background-color: rgb(2, 165, 2);
   border-radius: 20px;
-  border: 3px solid rgb(137, 2, 158);
+  border: 3px solid rgb(16, 78, 0);
 }
 
 .header {
   display: flex;
-  border-bottom: 7px solid #963ac8;
+  border-bottom: 7px solid #00db37;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.316);
 }
@@ -127,18 +127,20 @@ body {
 }
 
 .titulo {
-  color: #963ac8;
-  text-shadow: 1px 4px 4px rgb(89, 12, 113);
+  color: #00db37;
+  text-shadow: 1px 4px 4px #003b0f;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 80%;
   height: 2.5%;
-  margin-left: 550px;
+  font-size: 40px;
+  /* margin-left: 550px;   */
 }
 
 .titulo h1 {
-  height: 20px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,10 +151,11 @@ body {
   flex-direction: row;
   list-style: none;
   justify-content: space-around;
-  width: 93%;
-  height: 40px;
-  color: #963ac8;
+  width: 100%;
+  height: 50px;
+  color: #00db37;
   align-items: center;
+  justify-content: center;
   padding-right: 50%;
 }
 
@@ -188,9 +191,12 @@ body {
   /* color: #fff; */
   height: 800px;
   width: 100%;
-  background-image: url(../assets/Temporadas/BannerIniciação.jpg);
+  background-image: url(../assets/Temporadas/bannerOSNF2.webp);
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 50px;
+  /* width: 100%;
+  height: 100%; */
   background-position: center center;
   /* background-size: 15 00px; */
   /* grid-template-columns: 20rem auto */
@@ -227,6 +233,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
   /* margin-left: 100px; */
   /* height: 40px; */
   color: beige;
@@ -236,7 +243,7 @@ body {
 .tela_toda {
   display: flex;
   /* background-color: red; */
-  /* width: 100vw; */
+  width: 100vw;
   justify-content: flex-start;
   align-items: flex-start;
   height: 90vh;
@@ -253,11 +260,11 @@ body {
   font-size: 40px;
   width: 80%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-shadow: 2px 4px 4px rgb(0, 0, 0);
+  text-shadow: 2px 4px 4px #003b0f;
 }
 
 .banner .container span {
-  color: #963ac8;
+  color: #00db37;
   font-weight: bold;
 }
 
@@ -267,17 +274,67 @@ body {
   height: 100%;
   width: 100%;
 }
+.Grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.Grid img{
+  width: 300px;
+  padding-left: 30px;
+}
+.Grid span b{
+  font-size: 30px;
+  color: white;
+  -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+  text-shadow: 4px 4px 4px #003b0f;
+}
+.Grid span p b{
+  font-size: 20px;
+  color: #00f03c;
+  font-weight: bold;;
+  -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+  text-shadow: 4px 4px 4px #003b0f;
+}
+.cardContexto p{
+  color: white;
+}
+.cardContexto span p b{
+  font-size: 30px;
+  color: #00f03c;
+  -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+  text-shadow: 4px 4px 4px #003b0f;
+}
+.card span p b{
+  font-size: 20px;
+  color: #00f03c;
+  font-weight: bold;;
+  -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+  text-shadow: 4px 4px 4px #003b0f;
+}
 
 .bannerIniciacao .container p {
-  font-size: 40px;
-  width: 80%;
+  font-size: 50px;
+  width: 100%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-shadow: 2px 4px 4px rgb(0, 0, 0);
+  text-shadow: 2px 4px 4px #003b0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bannerIniciacao .container  span {
+  font-size: 50px;
+  width: 30%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 2px 4px 4px #003b0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bannerIniciacao .container span {
-  color: #fdf900;
+  color: #00f03c;
   font-weight: bold;
+  width: 100%;
 }
 .social {
   background-color: rgb(16, 1, 14);
@@ -290,8 +347,10 @@ body {
   width: 100%;
   /* height: 5%; */
   /* margin-bottom: 50px; */
-  flex-direction: column;
+  flex-direction: row;
+  top: 0;
 }
+
 
 .social .container {
   align-items: center;
@@ -324,21 +383,23 @@ body {
 
 
 /* card1 */
-.cardIdea {
-  padding: 30px;
-  /* width: 10px; */
-  text-align: center;
+.cardContexto {
   opacity: 100%;
   /* background-color: rgba(rgb(0, 0, 0,-50%)); */
   background-color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
-  width: 600px;
+  height: 80%;
+  width: 60%;
   border-radius: 7px;
   color: black;
-  border: 4px solid #963ac8;
+  border: 4px solid #00db37;
+  padding-bottom: 50px;
+  /* padding-right: 60px; */
+  /* padding-left: 60px; */
+  margin-bottom: 20px;
+  margin-right: 40px;
 }
 .card {
   /* padding: 30px; */
@@ -351,14 +412,15 @@ body {
   flex-direction: column;
   align-items: center;
   height: 80%;
-  width: 90%;
+  width: 40%;
   border-radius: 7px;
   color: black;
-  border: 4px solid #963ac8;
+  border: 4px solid #00db37;
   padding-bottom: 50px;
   /* padding-right: 60px; */
   /* padding-left: 60px; */
   margin-bottom: 20px;
+  margin-right: 40px;
 }
 .card .Imagens {
   height: fit-content;
@@ -371,12 +433,20 @@ body {
 .card h4 {
   font-size: 40px;
   color: white;
-  text-shadow: 1px 4px 4px rgb(130, 6, 168);
+  text-shadow: 1px 4px 4px #003b0f;
 }
 .card p {
   font-size: 24px;
   color: white;
-  text-shadow: 1px 4px 4px rgb(102, 3, 96);
+  text-shadow: 1px 4px 4px #003b0f;
+  padding-right: 20px;
+}
+.cardContexto p {
+  font-size: 34px;
+  color: white;
+  text-shadow: 1px 4px 4px #003b0f;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .cardIdea img {
   /* width: px;
@@ -387,12 +457,12 @@ body {
 .cardIdea h4 {
   font-size: 23px;
   color: white;
-  text-shadow: 1px 4px 4px rgb(130, 6, 168);
+  text-shadow: 1px 4px 4px #003b0f;
 }
 .cardIdea p {
   font-size: 24px;
   color: white;
-  text-shadow: 1px 4px 4px rgb(102, 3, 96);
+  text-shadow: 1px 4px 4px #003b0f;
 }
 
 /* Fundo1 */
@@ -448,7 +518,7 @@ body {
 .footer {
   /* height: 100%; */
   display: flex;
-  background-color: #963ac8;
+  background-color: #00db37;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -463,7 +533,8 @@ body {
 }
 
 .footer .container p {
-  color: #fff;
+  color: black;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -481,7 +552,7 @@ body {
 .card h2 {
   color: #b33cf3;
   -webkit-text-stroke: 1px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 1px 2px 1px rgb(73, 2, 84);
+  text-shadow: 1px 2px 1px #003b0f;
 }
 
 .campo {
@@ -509,18 +580,19 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #963ac8;
-  font-size: 20px;
-  text-shadow: 1px 4px 4px rgb(89, 12, 113);
+  color: #00db37;
+  font-size: 50px;
+  text-shadow: 1px 4px 4px #003b0f;
 }
 
 .agora {
   font-weight: 1000;
-  font-size: 30px;
-  text-shadow: 4px 4px 4px rgb(89, 12, 113);
+  font-size: 50px;
+  -webkit-text-stroke: 2px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+  text-shadow: 4px 4px 4px #003b0f;
 }
 .header div a {
-  color: #963ac8;
+  color: #00db37;
   text-decoration: none;
   font-weight: bold;
   font-family: Poppins, sans-serif;
@@ -530,10 +602,11 @@ body {
   padding-top: 10px;
 
   -webkit-text-stroke: 2px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 3px 4px 3px rgb(73, 2, 84);
+  text-shadow: 3px 4px 3px #003b0f;
 }
 .header div a:hover {
-  content: url("../assets/Ordo_Technologiae__1_-removebg-preview.png");
+  font-weight: 1000;
+
   margin-top: -20%;
   transition: 0.5s;
   size: 20px;
