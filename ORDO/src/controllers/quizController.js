@@ -1,38 +1,40 @@
-var aquarioModel = require("../models/aquarioModel");
+var quizModel = require("../models/quizModel");
 
-function buscarAquariosPorEmpresa(req, res) {
+function listar(req, res) {
   var idUsuario = req.params.idUsuario;
 
-  aquarioModel.buscarAquariosPorEmpresa(idUsuario).then((resultado) => {
-    if (resultado.length > 0) {
-      res.status(200).json(resultado);
-    } else {
-      res.status(204).json([]);
+  function listar(req, res) {
+    quizModel
+      .listar()
+      .then(function (resultado) {
+        // precisamos informar que o resultado voltará para o front-end como uma resposta em json
+        res.status(200).json(resultado);
+      })
+      .catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+      });
+  }
+
+  function cadastrar(req, res) {
+    var acertos = req.body.acertos;
+    var erros = req.body.erros;
+
+    //continuae aqui
+    if (acertos == undefined) {
+      res.status(400).send("acerto está undefined!");
+    } else if (erros == undefined) {
+      res.status(400).send("erro está undefined!");
     }
-  }).catch(function (erro) {
-    console.log(erro);
-    console.log("Houve um erro ao buscar os aquarios: ", erro.sqlMessage);
-    res.status(500).json(erro.sqlMessage);
-  });
-}
 
-
-function cadastrar(req, res) {
-  var descricao = req.body.descricao;
-  var idUsuario = req.body.idUsuario;
-
-  if (descricao == undefined) {
-    res.status(400).send("descricao está undefined!");
-  } else if (idUsuario == undefined) {
-    res.status(400).send("idUsuario está undefined!");
-  } else {
-
-
-    aquarioModel.cadastrar(descricao, idUsuario)
-      .then((resultado) => {
-        res.status(201).json(resultado);
-      }
-      ).catch((erro) => {
+    quizModel
+      .cadastrar(acertos, erros)
+      .then(
+        // resultado é o que a gente inseriu
+        function (resultado) {
+          res.json(resultado);
+        }
+      )
+      .catch(function (erro) {
         console.log(erro);
         console.log(
           "\nHouve um erro ao realizar o cadastro! Erro: ",
@@ -41,9 +43,9 @@ function cadastrar(req, res) {
         res.status(500).json(erro.sqlMessage);
       });
   }
-}
 
-module.exports = {
-  buscarAquariosPorEmpresa,
-  cadastrar
+  module.exports = {
+    listar,
+    cadastrar,
+  };
 }

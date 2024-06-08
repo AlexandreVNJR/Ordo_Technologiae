@@ -12,12 +12,22 @@ USE Ordo;
 
 
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
+CREATE TABLE Agente (
+	idAgente int primary key auto_increment,
+    codinome varchar(45) unique,
+    email varchar(300) unique,
+    tempPref varchar(20),
+    arquetipo varchar(15),
+    senha varchar(40)
+    );
+    
+    create table Quiz(
+	idQuiz int auto_increment primary key,
+	acertos int,
+    erros int,
+    fkAgente int,
+    foreign key fkAgenteQuiz(fkAgente) references Agente(idAgente)
+    );
 
 
 
