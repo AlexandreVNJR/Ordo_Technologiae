@@ -9,9 +9,12 @@ body {
   scrollbar-width: thin;
   scrollbar-color: rgb(230, 2, 255) rgb(75, 0, 67);
 }
+body {
+  overflow-x: hidden;
+  }
 
 *::-webkit-scrollbar {
-  width: 12px;
+  width: 15px;
 }
 
 *::-webkit-scrollbar-track {
@@ -341,7 +344,7 @@ body {
   color: black;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   /* margin-left: 100px;
     padding: 50px; */
   width: 100%;
@@ -412,7 +415,7 @@ body {
   flex-direction: column;
   align-items: center;
   height: 80%;
-  width: 40%;
+  width: 50%;
   border-radius: 7px;
   color: black;
   border: 4px solid #ff9b04;

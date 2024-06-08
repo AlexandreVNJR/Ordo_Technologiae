@@ -18,18 +18,18 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: rgb(16, 78, 0);
+  background: #0c9403;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgb(2, 165, 2);
+  background-color: #3aff04;
   border-radius: 20px;
-  border: 3px solid rgb(16, 78, 0);
+  border: 3px solid #0c9403;
 }
 
 .header {
   display: flex;
-  border-bottom: 7px solid #00db37;
+  border-bottom: 7px solid #3aff04;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.316);
 }
@@ -130,8 +130,8 @@ body {
 }
 
 .titulo {
-  color: #00db37;
-  text-shadow: 1px 4px 4px #003b0f;
+  color: #3aff04;
+  text-shadow: 1px 4px 4px #0c9403;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   align-items: center;
@@ -156,7 +156,7 @@ body {
   justify-content: space-around;
   width: 100%;
   height: 50px;
-  color: #00db37;
+  color: #0c9403;
   align-items: center;
   justify-content: center;
   padding-right: 50%;
@@ -192,15 +192,16 @@ body {
 .bannerIniciacao {
   /* padding: 40px 20px 100px 10px; */
   /* color: #fff; */
-  height: 800px;
+  height: 100% ;
   width: 100%;
-  background-image: url(../assets/Temporadas/bannerOSNF2.webp);
+  background-image: url(../assets/Temporadas/bannerSDOL.jpg) ;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 50px;
+  /* filter: brightness(50%); */
   /* width: 100%;
-  height: 100%; */
-  background-position: center center;
+  height: 100%;  */
+  /* background-position: center center; */
   /* background-size: 15 00px; */
   /* grid-template-columns: 20rem auto */
   /* width: 5000px; */
@@ -209,6 +210,9 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+
+
 
 .Frasebanner {
   /* margin-top: 20px; */
@@ -237,16 +241,17 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  font-weight: bold;
   /* margin-left: 100px; */
   /* height: 40px; */
-  color: beige;
+  color: rgb(0, 0, 0);
   padding: 7px;
 }
 
 .tela_toda {
   display: flex;
   /* background-color: red; */
-  width: 100vw;
+  width: 100px;
   justify-content: flex-start;
   align-items: flex-start;
   height: 90vh;
@@ -260,22 +265,25 @@ body {
 }
 
 .banner .container p {
-  font-size: 40px;
+  font-size: 60px;
   width: 80%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-shadow: 2px 4px 4px #003b0f;
+  
+  -webkit-text-stroke: 20px ;
+  text-shadow: 2px 4px 4px #0c9403;
 }
 
 .banner .container span {
-  color: #00db37;
+  color: #3aff04;
   font-weight: bold;
+  /* font-size: 30px; */
 }
 
 .bannerIniciacao .container {
   /* justify-content: center; */
   /* align-items: center; */
   height: 100%;
-  width: 100%;
+  width: 100px;
 }
 .Grid{
   display: grid;
@@ -289,55 +297,65 @@ body {
   font-size: 30px;
   color: white;
   -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 4px 4px 4px #003b0f;
+  text-shadow: 4px 4px 4px #0c9403;
 }
 .Grid span p b{
   font-size: 20px;
-  color: #00f03c;
+  color: #3aff04;
   font-weight: bold;;
   -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 4px 4px 4px #003b0f;
+  text-shadow: 4px 4px 4px #0c9403;
 }
 .cardContexto p{
   color: white;
 }
 .cardContexto span p b{
   font-size: 30px;
-  color: #00f03c;
+  color: #3aff04;
   -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 4px 4px 4px #003b0f;
+  text-shadow: 4px 4px 4px #0c9403;
 }
 .card span p b{
   font-size: 20px;
-  color: #00f03c;
+  color: #3aff04;
   font-weight: bold;;
   -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 4px 4px 4px #003b0f;
+  text-shadow: 4px 4px 4px #0c9403;
+}
+.bannerIniciacao .container img{
+  filter: brightness(50%);
 }
 
 .bannerIniciacao .container p {
-  font-size: 50px;
+  margin-bottom: 10%;
+  top: 0;
+  height: 100%;
+  font-size: 70px;
   width: 100%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-shadow: 2px 4px 4px #003b0f;
+  
+  text-shadow: 2px 4px 4px #0c9403;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .bannerIniciacao .container  span {
-  font-size: 50px;
-  width: 30%;
+  font-size: 70px;
+  width: 100%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-shadow: 2px 4px 4px #003b0f;
+  
+  -webkit-text-stroke: 3px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
+  text-shadow: 4px 4px 4px #0c9403;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .bannerIniciacao .container span {
-  color: #00f03c;
+  color: #3aff04;
   font-weight: bold;
-  width: 100%;
+  text-shadow: 1px 1px 1px #0c9403
+  /* width: 100%; */
 }
 .social {
   background-color: rgb(16, 1, 14);
@@ -397,7 +415,7 @@ body {
   width: 60%;
   border-radius: 7px;
   color: black;
-  border: 4px solid #00db37;
+  border: 4px solid #3aff04;
   padding-bottom: 50px;
   /* padding-right: 60px; */
   /* padding-left: 60px; */
@@ -415,10 +433,10 @@ body {
   flex-direction: column;
   align-items: center;
   height: 80%;
-  width: 40%;
+  width: 50%;
   border-radius: 7px;
   color: black;
-  border: 4px solid #00db37;
+  border: 4px solid #3aff04;
   padding-bottom: 50px;
   /* padding-right: 60px; */
   /* padding-left: 60px; */
@@ -436,18 +454,18 @@ body {
 .card h4 {
   font-size: 40px;
   color: white;
-  text-shadow: 1px 4px 4px #003b0f;
+  text-shadow: 1px 4px 4px #0c9403;
 }
 .card p {
   font-size: 24px;
   color: white;
-  text-shadow: 1px 4px 4px #003b0f;
+  text-shadow: 1px 4px 4px #0c9403;
   padding-right: 20px;
 }
 .cardContexto p {
   font-size: 34px;
   color: white;
-  text-shadow: 1px 4px 4px #003b0f;
+  text-shadow: 1px 4px 4px #0c9403;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -460,12 +478,12 @@ body {
 .cardIdea h4 {
   font-size: 23px;
   color: white;
-  text-shadow: 1px 4px 4px #003b0f;
+  text-shadow: 1px 4px 4px #0c9403;
 }
 .cardIdea p {
   font-size: 24px;
   color: white;
-  text-shadow: 1px 4px 4px #003b0f;
+  text-shadow: 1px 4px 4px #0c9403;
 }
 
 /* Fundo1 */
@@ -521,7 +539,7 @@ body {
 .footer {
   /* height: 100%; */
   display: flex;
-  background-color: #00db37;
+  background-color: #3aff04;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -555,7 +573,7 @@ body {
 .card h2 {
   color: #b33cf3;
   -webkit-text-stroke: 1px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 1px 2px 1px #003b0f;
+  text-shadow: 1px 2px 1px #0c9403;
 }
 
 .campo {
@@ -583,19 +601,19 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #00db37;
+  color: #3aff04;
   font-size: 50px;
-  text-shadow: 1px 4px 4px #003b0f;
+  text-shadow: 1px 4px 4px #0c9403;
 }
 
 .agora {
   font-weight: 1000;
   font-size: 50px;
   -webkit-text-stroke: 2px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 4px 4px 4px #003b0f;
+  text-shadow: 4px 4px 4px #0c9403;
 }
 .header div a {
-  color: #00db37;
+  color: #3aff04;
   text-decoration: none;
   font-weight: bold;
   font-family: Poppins, sans-serif;
@@ -605,7 +623,7 @@ body {
   padding-top: 10px;
 
   -webkit-text-stroke: 2px color(srgb rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0));
-  text-shadow: 3px 4px 3px #003b0f;
+  text-shadow: 3px 4px 3px #0c9403;
 }
 .header div a:hover {
   font-weight: 1000;
