@@ -217,33 +217,7 @@
     const totalQuestion = questions.length
     let erros = totalQuestion - acertos;
 
-    const labels = [
-        'Acertos',
-        'Erros',
-        
-    ];
-
-    const data = {
-        labels: 'pie',
-        datasets: [{
-            label: labels,
-            backgroundColor: '#860000',
-            borderColor: '#860000',
-            data: [acertos, erros],
-        }]
-    };
-
-    const config = {
-        type: 'pie',
-        data: data,
-        options: {}
-    };
-
-
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
+    
     
 
   
@@ -304,7 +278,39 @@
         currentQuestionIndex++
     }
 
+
     function finishGame(){
+        let erros = totalQuestion - acertos;
+
+        const labels = [
+        'Acertos',
+        'Erros',
+        
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Teste',
+            backgroundColor: '#860000',
+            borderColor: '#860000',
+            fill: false,
+            data: [acertos, erros],
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {}
+    };
+
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
         
         const performance = Math.floor(acertos *100  / totalQuestion)
 
@@ -331,16 +337,16 @@
         <button class="button" onclick="window.location.reload()">
             Refazer teste
         </button>
-        <div class="linha">
 
                 <div class=" grafico">
                     <h2> Sensor Temperatura 1 </h2>
-                    <canvas id="myChart"></canvas>
+                    <canvas width="400" height="400" id="myChart"></canvas>
                 </div>
-        </div>
+        
 
         `
-
+        console.log(acertos)
+        console.log(erros)
     }
 
    
