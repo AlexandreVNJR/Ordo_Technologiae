@@ -50,7 +50,7 @@
             <div class="socialA">
                 <div class="containerA">
                   <div class="cardA">
-                      <!-- <img src="logo.png" alt=""> -->
+                      <img src="logo.png" alt="">
                       <h4>Como Funciona?</h4>
                       <p>Nessa secção é possivel simular a quantidade de episódio que são possíveis de ser assistidos de acordo com as horas disponíveis do usuário.
 
@@ -59,7 +59,7 @@
                   </div>
                   <div class="sectionA">
                     <div class="cardA">
-                      <!-- <img src="SimboloMedo.webp" alt=""> -->
+                      <img src="SimboloMedo.webp" alt="">
                       <h4>Assistir</h4>
                       <p>
 
@@ -80,7 +80,7 @@
                         
                          <br>
                         <button class="elemento" onclick="assistir()">Assistir episódios</button>
-                        <div class="div_mensagem" id="div_mensagem"></div></p>
+                        <div id="div_mensagem"></div></p>
                       </div>
                   </div>
                 </div>
@@ -133,7 +133,6 @@
     function assistir() {
         var tempoMedioEP = 4;
         var msg = ``;
-        div_mensagem.innerHTML = ""
         
 
         var episodio = Number(ipt_episodio.value);
@@ -141,20 +140,15 @@
         var minutosUsuário = tempoUsuario *60;
         var temp = slct_temp.value;
 
-        var numeroEpisodios = tempoUsuario / tempoMedioEP * 100;
+        var numeroEpisodios = tempoUsuario / tempoMedioEP;
 
         if (temp == "iniciacao"){
             if (episodio >= 1 && episodio <= 3){ 
-                 var tempoCorrespondente = listaEps_Iniciacao[episodio-1];
-                 var tempoCorrespondenteMinutos = tempoCorrespondente * 60;
-                  var assistido = tempoCorrespondenteMinutos - minutosUsuário;
-                  var assistidoHora = assistido /60 
-                 console.log(tempoCorrespondente)  
-                 console.log(episodio) 
-                 console.log(tempoCorrespondenteMinutos) 
-                 console.log(assistido) 
-                 console.log(assistidoHora) 
+                 var tempoCorrespondente = listaEps_Iniciacao.indexOf(episodio)
+                 console.log(tempoCorrespondente)   
+
                 
+
 
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`

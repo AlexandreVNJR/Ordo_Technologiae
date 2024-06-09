@@ -40,10 +40,6 @@ body {
     border-radius: 10px;
     background-color: #40127c;
 }
-.div_mensagem{
-  color: beige;
-  font-size: 20px;
-}
 .cardA select:hover {
     width: 35%;
     padding: 10px 15px;

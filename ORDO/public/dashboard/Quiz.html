@@ -20,8 +20,8 @@
         rel="stylesheet">
 
     <!-- scripts do Chart.js - 2022-1 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
@@ -288,54 +288,28 @@
         
     ];
 
-    // const data = {
-    //     labels: labels,
-    //     datasets: [{
-    //         label: 'Teste',
-    //         backgroundColor: '#860000',
-    //         borderColor: '#860000',
-    //         fill: false,
-    //         data: [acertos, erros],
-    //     }]
-    // };
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Teste',
+            backgroundColor: '#860000',
+            borderColor: '#860000',
+            fill: false,
+            data: [acertos, erros],
+        }]
+    };
 
-    // const config = {
-    //     type: 'pie',
-    //     data: data,
-    //     options: {}
-    // };
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {}
+    };
 
 
-    // const myChart = new Chart(
-    //     document.getElementById('myChart'),
-    //     config
-    // );
-    var xValues = ["Acertos", "Erros"];
-var yValues = [acertos,erros ];
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
-];
-
-    new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "World Wide Wine Production 2018"
-    }
-  }
-});
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
 
         
         const performance = Math.floor(acertos *100  / totalQuestion)
@@ -365,8 +339,8 @@ var barColors = [
         </button>
 
                 <div class=" grafico">
-                    <h2> Gráficos </h2>
-                    <canvas style="width: 200px;height: 200px;"  id="myChart"></canvas>
+                    <h2> Sensor Temperatura 1 </h2>
+                    <canvas width="400" height="400" id="myChart"></canvas>
                 </div>
         
 
