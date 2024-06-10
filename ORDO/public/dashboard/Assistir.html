@@ -52,7 +52,7 @@
                   <div class="cardA">
                       <img src="logo.png" alt="">
                       <h4>Como Funciona?</h4>
-                      <p>Nessa secção é possivel simular a quantidade de episódio que são possíveis de ser assistidos de acordo com as horas disponíveis do usuário.
+                      <p>Nessa secção é possivel simular a quantidade de <b>horas</b> que são possíveis de ser assistidos de acordo com as <b>horas</b> disponíveis do usuário.
 
 
                       </p>
@@ -65,13 +65,13 @@
 
                         Qual temporada deseja assistir? <select id="slct_temp">
                             <option class="elemento" value="null" selected disabled>Selecione uma opção</option>
-                            <option class="elemento" value="iniciacao"> Iniciação </option>
-                            <option class="elemento" value="osnf"> O Segredo na Floresta </option>
-                            <option class="elemento" value="desconjuracao"> Desconjuração </option>
-                            <option class="elemento" value="calamidade"> Calamidade </option>
-                            <option class="elemento" value="osni"> O Segredo na Ilha </option>
-                            <option class="elemento" value="sdol"> Sinais do Outro Lado </option>
-                            <option class="elemento" value="qtd"> Quarentena </option>
+                            <option class="elemento" value="Iniciação"> Iniciação </option>
+                            <option class="elemento" value="OSNF"> O Segredo na Floresta </option>
+                            <option class="elemento" value="Desconjuração"> Desconjuração </option>
+                            <option class="elemento" value="Calamidade"> Calamidade </option>
+                            <option class="elemento" value="OSNI"> O Segredo na Ilha </option>
+                            <option class="elemento" value="SDOL"> Sinais do Outro Lado </option>
+                            <option class="elemento" value="Quarentena"> Quarentena </option>
                         </select>  <br><br>
                         Qual episódio deseja assistir? <input class="elemento" type="text" id="ipt_episodio" placeholder="Número do Episódio"> <br><br>
 
@@ -80,7 +80,15 @@
                         
                          <br>
                         <button class="elemento" onclick="assistir()">Assistir episódios</button>
-                        <div id="div_mensagem"></div></p>
+                        <button class="elemento" onclick="continuar()">Continuar Assistindo</button> <br><br>
+
+                        <div id="div_mensagem" class="mensagem"></div></p>
+                       
+                        <div id="barra" class="barra hide">
+                            <div >
+
+                            </div>
+                        </div>
                       </div>
                   </div>
                 </div>
@@ -121,18 +129,22 @@
 
 
 <script>
-        const listaEps_Iniciacao = [5.5, 3.3, 3.5];
+        
+        const progresso = document.querySelector(".barra div")
+        const listaEps_Iniciação = [5.5, 3.3, 3.5];
         const listaEps_Onsf = [4, 4.4, 4, 4, 4.3, 4.4, 4, 4, 3.4, 3.4, 3.5, 3.3, 3.3, 3.1, 3.4, 3.3];
-        const listaEps_Desconjuracao = [3.5, 4.2, 4.2, 3.4, 4, 6.2, 4.3, 3.4, 4.1, 4.3, 3.5, 3.4, 4.2, 3.3, 3.4, 4.1, 4, 4.4, 4.5, 4.2];
+        const listaEps_Desconjuração = [3.5, 4.2, 4.2, 3.4, 4, 6.2, 4.3, 3.4, 4.1, 4.3, 3.5, 3.4, 4.2, 3.3, 3.4, 4.1, 4, 4.4, 4.5, 4.2];
         const listaEps_Calamidade = [4.2, 3, 5, 3.5, 4, 4.1, 5, 5, 4.3, 3.4, 4.4, 4, 4.2];
 
-        const listaEps_Osni = [4.5, 4.5, 5.2, 5.2, 4.5, 4.4, 5.2, 3.2];
-        const listaEps_Sdol = [4.4, 4.5, 4.1, 4.2, 4, 4, 4.1];
+        const listaEps_OSNI = [4.5, 4.5, 5.2, 5.2, 4.5, 4.4, 5.2, 3.2];
+        const listaEps_SDOL = [4.4, 4.5, 4.1, 4.2, 4, 4, 4.1];
         const listaEps_Quarentena = [5.4, 5.3];
 
     function assistir() {
         var tempoMedioEP = 4;
         var msg = ``;
+        div_mensagem.innerHTML =""
+        var porcentagem = 0
         
 
         var episodio = Number(ipt_episodio.value);
@@ -140,71 +152,205 @@
         var minutosUsuário = tempoUsuario *60;
         var temp = slct_temp.value;
 
-        var numeroEpisodios = tempoUsuario / tempoMedioEP;
+        var numeroEpisodios = tempoUsuario / tempoMedioEP * 100;
 
-        if (temp == "iniciacao"){
+        if (temp == "Iniciação"){
             if (episodio >= 1 && episodio <= 3){ 
-                 var tempoCorrespondente = listaEps_Iniciacao.indexOf(episodio)
-                 console.log(tempoCorrespondente)   
+                if(tempoUsuario>listaEps_Iniciação[episodio-1]){
+                    div_mensagem.innerHTML = `<h4>Insira um tempo menor do que o do episódio</h4>`
+                }else{
+                    var tempoCorrespondente = listaEps_Iniciação[episodio-1];
+                 var tempoCorrespondenteMinutos = tempoCorrespondente * 60;
+                  var assistido = tempoCorrespondenteMinutos - minutosUsuário;
+                  var assistidoHora = assistido /60 
+                  var porcentagemCrua = tempoUsuario / tempoCorrespondente * 100;
+                  var porcentagem = porcentagemCrua.toFixed()
+                  var restante = tempoCorrespondente - tempoUsuario
+
+                div_mensagem.innerHTML += `<h4>Progresso do episódio ${episodio} de ${temp}:</h4> <br><br>
+                Horas assitidas: ${tempoUsuario.toFixed(1)}  <br><br>
+                Horas restantes: ${restante.toFixed(1)} <br><br>
+                ${porcentagem}% do episódio foi assitido!
+                `
 
                 
+                progresso.style.width = porcentagem+'%';
+                barra.classList.remove("hide")
 
-
+                }
+               
             }else{
-                div_mensagem.innerHTML = `Insira um episódio válido`
+                div_mensagem.innerHTML = `<h4>Insira um episódio válido</h4>`
             }
         }
-        if (temp == "osnf"){
+        if (temp == "OSNF"){
             if (episodio >= 1 && episodio <= 16){
+                if(tempoUsuario>listaEps_Onsf[episodio-1]){
+                    div_mensagem.innerHTML = `<h4>Insira um tempo menor do que o do episódio</h4>`
+                }else{
+                    var tempoCorrespondente = listaEps_Onsf[episodio-1];
+                 var tempoCorrespondenteMinutos = tempoCorrespondente * 60;
+                  var assistido = tempoCorrespondenteMinutos - minutosUsuário;
+                  var assistidoHora = assistido /60 
+                  var porcentagemCrua = tempoUsuario / tempoCorrespondente * 100;
+                  var porcentagem = porcentagemCrua.toFixed()
+                  var restante = tempoCorrespondente - tempoUsuario
+
+                div_mensagem.innerHTML += `<h4>Progresso do episódio ${episodio} de ${temp}:</h4> <br><br>
+                Horas assitidas: ${tempoUsuario.toFixed(1)}  <br><br>
+                Horas restantes: ${restante.toFixed(1)} <br><br>
+                ${porcentagem}% do episódio foi assitido!
+                `
+
+                
+                progresso.style.width = porcentagem+'%';
+                barra.classList.remove("hide")
+
+                }
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == "desconjuracao"){
+        if (temp == "Desconjuração"){
             if (episodio >= 1 && episodio <= 20){
+                if(tempoUsuario>listaEps_Desconjuração[episodio-1]){
+                    div_mensagem.innerHTML = `<h4>Insira um tempo menor do que o do episódio</h4>`
+                }else{
+                    var tempoCorrespondente = listaEps_Desconjuração[episodio-1];
+                 var tempoCorrespondenteMinutos = tempoCorrespondente * 60;
+                  var assistido = tempoCorrespondenteMinutos - minutosUsuário;
+                  var assistidoHora = assistido /60 
+                  var porcentagemCrua = tempoUsuario / tempoCorrespondente * 100;
+                  var porcentagem = porcentagemCrua.toFixed()
+                  var restante = tempoCorrespondente - tempoUsuario
+
+                div_mensagem.innerHTML += `<h4>Progresso do episódio ${episodio} de ${temp}:</h4> <br><br>
+                Horas assitidas: ${tempoUsuario.toFixed(1)}  <br><br>
+                Horas restantes: ${restante.toFixed(1)} <br><br>
+                ${porcentagem}% do episódio foi assitido!
+                `
+
+                
+                progresso.style.width = porcentagem+'%';
+                barra.classList.remove("hide")
+
+                }
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == "calamidade"){
+        if (temp == "Calamidade"){
             if (episodio >= 0 && episodio <= 12){
+                if(tempoUsuario>listaEps_Calamidade[episodio-1]){
+                    div_mensagem.innerHTML = `<h4>Insira um tempo menor do que o do episódio</h4>`
+                }else{
+                    var tempoCorrespondente = listaEps_Calamidade[episodio-1];
+                 var tempoCorrespondenteMinutos = tempoCorrespondente * 60;
+                  var assistido = tempoCorrespondenteMinutos - minutosUsuário;
+                  var assistidoHora = assistido /60 
+                  var porcentagemCrua = tempoUsuario / tempoCorrespondente * 100;
+                  var porcentagem = porcentagemCrua.toFixed()
+                  var restante = tempoCorrespondente - tempoUsuario
+
+                div_mensagem.innerHTML += `<h4>Progresso do episódio ${episodio} de ${temp}:</h4> <br><br>
+                Horas assitidas: ${tempoUsuario.toFixed(1)}  <br><br>
+                Horas restantes: ${restante.toFixed(1)} <br><br>
+                ${porcentagem}% do episódio foi assitido!
+                `
+
+                
+                progresso.style.width = porcentagem+'%';
+                barra.classList.remove("hide")
+
+                }
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == "osni"){
+        if (temp == "OSNI"){
             if (episodio >= 1 && episodio <= 8){
+                if(tempoUsuario>listaEps_OSNI[episodio-1]){
+                    div_mensagem.innerHTML = `<h4>Insira um tempo menor do que o do episódio</h4>`
+                }else{
+                    var tempoCorrespondente = listaEps_OSNI[episodio-1];
+                 var tempoCorrespondenteMinutos = tempoCorrespondente * 60;
+                  var assistido = tempoCorrespondenteMinutos - minutosUsuário;
+                  var assistidoHora = assistido /60 
+                  var porcentagemCrua = tempoUsuario / tempoCorrespondente * 100;
+                  var porcentagem = porcentagemCrua.toFixed()
+                  var restante = tempoCorrespondente - tempoUsuario
+
+                div_mensagem.innerHTML += `<h4>Progresso do episódio ${episodio} de ${temp}:</h4> <br><br>
+                Horas assitidas: ${tempoUsuario.toFixed(1)}  <br><br>
+                Horas restantes: ${restante.toFixed(1)} <br><br>
+                ${porcentagem}% do episódio foi assitido!
+                `
+
+                
+                progresso.style.width = porcentagem+'%';
+                barra.classList.remove("hide")
+
+                }
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == "sdol"){
+        if (temp == "SDOL"){
             if (episodio >= 1 && episodio <= 7){
+                if(tempoUsuario>listaEps_SDOL[episodio-1]){
+                    div_mensagem.innerHTML = `<h4>Insira um tempo menor do que o do episódio</h4>`
+                }else{
+                    var tempoCorrespondente = listaEps_SDOL[episodio-1];
+                 var tempoCorrespondenteMinutos = tempoCorrespondente * 60;
+                  var assistido = tempoCorrespondenteMinutos - minutosUsuário;
+                  var assistidoHora = assistido /60 
+                  var porcentagemCrua = tempoUsuario / tempoCorrespondente * 100;
+                  var porcentagem = porcentagemCrua.toFixed()
+                  var restante = tempoCorrespondente - tempoUsuario
+
+                div_mensagem.innerHTML += `<h4>Progresso do episódio ${episodio} de ${temp}:</h4> <br><br>
+                Horas assitidas: ${tempoUsuario.toFixed(1)}  <br><br>
+                Horas restantes: ${restante.toFixed(1)} <br><br>
+                ${porcentagem}% do episódio foi assitido!
+                `
+
+                
+                progresso.style.width = porcentagem+'%';
+                barra.classList.remove("hide")
+
+                }
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
-        if (temp == "qtd"){
+        if (temp == "Quarentena"){
             if (episodio >= 1 && episodio <= 2){
+                if(tempoUsuario>listaEps_Quarentena[episodio-1]){
+                    div_mensagem.innerHTML = `<h4>Insira um tempo menor do que o do episódio</h4>`
+                }else{
+                    var tempoCorrespondente = listaEps_Quarentena[episodio-1];
+                 var tempoCorrespondenteMinutos = tempoCorrespondente * 60;
+                  var assistido = tempoCorrespondenteMinutos - minutosUsuário;
+                  var assistidoHora = assistido /60 
+                  var porcentagemCrua = tempoUsuario / tempoCorrespondente * 100;
+                  var porcentagem = porcentagemCrua.toFixed()
+                  var restante = tempoCorrespondente - tempoUsuario
+
+                div_mensagem.innerHTML += `<h4>Progresso do episódio ${episodio} de ${temp}:</h4> <br><br>
+                Horas assitidas: ${tempoUsuario.toFixed(1)}  <br><br>
+                Horas restantes: ${restante.toFixed(1)} <br><br>
+                ${porcentagem}% do episódio foi assitido!
+                `
+
+                
+                progresso.style.width = porcentagem+'%';
+                barra.classList.remove("hide")
+
+                }
             }else{
                 div_mensagem.innerHTML = `Insira um episódio válido`
             }
         }
         
-            // for(var index = episodio-1; index>=episodio; index++){
-                //     listaEps_Iniciacao.indexOf[]
-                // }
-
-            //     for (var cont = 0; cont < numeroEpisodios; cont++) {
-            //     msg += `Episódio ${episodio + cont}<br>`
-            //     for (var cont2 = 1; tempoUsuario > 0 && cont2 <= tempoMedioEP; cont2++) {
-            //         if (abertura == 2 && cont2 < 3) msg += `Minuto ${cont2}: Assistindo abertura <br>`
-            //         else if (encerramento == 2 && (cont2 == (tempoMedioEP - 1) || cont2 == tempoMedioEP)) msg += `Minuto ${cont2}: Assistindo encerramento <br>`
-            //         else msg += `Minuto ${cont2}: Assistindo o episódio <br>`
-            //         tempoUsuario--;
-            //     }
-
-            // } msg += `Fim dos episódios! <br> Foram assistidos: ${numeroEpisodios} episódios`
-            // div_mensagem.innerHTML = msg;
     }
 </script>

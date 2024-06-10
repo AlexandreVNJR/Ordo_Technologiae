@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function mostrar() {
+function listar() {
 
   var instrucaoSql = `SELECT * FROM Quiz;`;
 
@@ -8,7 +8,7 @@ function mostrar() {
   return database.executar(instrucaoSql);
 }
 
-function gabarito(acertos, erros) {
+function cadastrar(acertos, erros) {
   
   var instrucaoSql = `INSERT INTO (acertos, erros) Quiz VALUES (${acertos}, ${erros})`;
 
@@ -18,6 +18,6 @@ function gabarito(acertos, erros) {
 
 
 module.exports = {
-  mostrar,
-  gabarito
+  listar,
+  cadastrar
 }

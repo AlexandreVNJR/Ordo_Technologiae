@@ -1,11 +1,11 @@
 var quizModel = require("../models/quizModel");
 
-function listar(req, res) {
+function mostrar(req, res) {
   var idUsuario = req.params.idUsuario;
 
-  function listar(req, res) {
+  function mostrar(req, res) {
     quizModel
-      .listar()
+      .mostrar()
       .then(function (resultado) {
         // precisamos informar que o resultado voltará para o front-end como uma resposta em json
         res.status(200).json(resultado);
@@ -15,7 +15,7 @@ function listar(req, res) {
       });
   }
 
-  function cadastrar(req, res) {
+  function gabarito(req, res) {
     var acertos = req.body.acertos;
     var erros = req.body.erros;
 
@@ -27,7 +27,7 @@ function listar(req, res) {
     }
 
     quizModel
-      .cadastrar(acertos, erros)
+      .gabarito(acertos, erros)
       .then(
         // resultado é o que a gente inseriu
         function (resultado) {
@@ -45,7 +45,7 @@ function listar(req, res) {
   }
 
   module.exports = {
-    listar,
-    cadastrar,
+    mostrar,
+    gabarito,
   };
 }
