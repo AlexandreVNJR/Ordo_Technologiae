@@ -7,10 +7,10 @@ var quizController = require("../controllers/quizController");
 //   quizController.buscarquizsPorEmpresa(req, res);
 // });
 
-router.post("/cadastrar", function (req, res) {
-  quizController.cadastrar(req, res);
+router.post("/gabarito", function (req, res) {
+  quizController.gabarito(req, res);
 })
-router.post("/listar", function (req, res) {
+router.post("/mostrar", function (req, res) {
   quizController.listar(req, res);
 })
 

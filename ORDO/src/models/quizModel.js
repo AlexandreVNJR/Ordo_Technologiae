@@ -8,9 +8,9 @@ function mostrar() {
   return database.executar(instrucaoSql);
 }
 
-function gabarito(acertos, erros) {
+function gabarito(acertosLista, errosLista) {
   
-  var instrucaoSql = `INSERT INTO (acertos, erros) Quiz VALUES (${acertos}, ${erros})`;
+  var instrucaoSql = `INSERT INTO Quiz (acertos, erros) Quiz VALUES (${acertoslista}, ${errosLista})`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);

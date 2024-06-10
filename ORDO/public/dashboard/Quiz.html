@@ -76,11 +76,11 @@
                                 <button class=" next-question button hide">Próxima pergunta</button>
                             </div>
                             <div class="paiGrafico">
-                                <div id="coiso" sty class="grafico hide ">
+                                <div id="coiso" sty class="grafico  ">
                                     <h2> Pontuação Atual </h2>
                                     <canvas width="50px" height="50px" id="myChart"></canvas>
                                 </div>
-                                <div id="apiGrafico" class="apiGrafico hide ">
+                                <div id="apiGrafico" class="apiGrafico  ">
                                     <h2> Melhor pontuação </h2>
                                     <canvas width="50px" height="50px" id="myChart2"></canvas>
                                 </div>
@@ -388,6 +388,7 @@ var xValues = ["Acertos", "Erros"];
         `
         coiso.classList.remove("hide")
         apiGrafico.classList.remove("hide")
+        gabarito()
 
     }
 
@@ -397,9 +398,49 @@ var xValues = ["Acertos", "Erros"];
         console.log(errosLista)
 
 
-        fetch("/quiz/cadastrar", {
+        fetch("/dashboard/Quiz.html", {
       //método dessa fetch , insert, postar
       method: "POST",
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      //permite mandar valores
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        acertosServer: acertos,
+        errosServer: erros,
+      }),
+    })
+    //acontece depois da rota
+    // resultado tranformado em json
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          console.log("Acertos e erros cadastrados")
+
+        } else {
+          alert( "Houve um erro ao tentar realizar o cadastro!");
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        // finalizarAguardar();
+      });
+    }
+
+    function mostrar(){
+        
+        console.log(acertosLista)
+        console.log(errosLista)
+
+
+        fetch("/dashboard/Quiz.html", {
+      //método dessa fetch , insert, postar
+      method: "GET",
 
       headers: {
         "Content-Type": "application/json",

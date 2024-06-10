@@ -1,16 +1,16 @@
 var database = require("../database/config");
 
-function listar() {
+function continuar() {
 
-  var instrucaoSql = `SELECT * FROM Quiz;`;
+  var instrucaoSql = `select * from Assistir`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
 }
 
-function cadastrar(acertos, erros) {
+function assistir(tempoUsuario, tempoCorrespondente,episodio,temp) {
   
-  var instrucaoSql = `INSERT INTO (acertos, erros) Quiz VALUES (${acertos}, ${erros})`;
+  var instrucaoSql = `INSERT INTO Assistir(tempoUsuario, tempoCorrespondente,episodio,temp) Quiz VALUES (${tempoUsuario}, ${tempoCorrespondente},${episodio},${temp})`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
@@ -18,6 +18,6 @@ function cadastrar(acertos, erros) {
 
 
 module.exports = {
-  listar,
-  cadastrar
+  continuar,
+  assistir
 }
