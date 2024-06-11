@@ -10,8 +10,9 @@ var quizController = require("../controllers/quizController");
 router.post("/gabarito", function (req, res) {
   quizController.gabarito(req, res);
 })
+
 router.post("/mostrar", function (req, res) {
-  quizController.listar(req, res);
+  quizController.mostrar(req, res);
 })
 
 module.exports = router;

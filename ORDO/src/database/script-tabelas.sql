@@ -12,10 +12,6 @@ USE Ordo;
 
 
 
-create table ChatGlobal(
-    idChat int primary key auto_increment,
-    mensagem varchar(100)
-    );
 
 CREATE TABLE Agente (
 	idAgente int primary key auto_increment,
@@ -36,16 +32,7 @@ CREATE TABLE Agente (
     foreign key fkAgenteQuiz(fkAgente) references Agente(idAgente)
     );
     
-    create table Assitir(
-    idAssitir int primary key auto_increment,
-    tempoUsuario float,
-    tempoCorrespondente float,
-    episodio int,
-    temp varchar(45),
-     fkAgente int,
-    foreign key fkAgenteQuiz(fkAgente) references Agente(idAgente)
-    );
-
+   
 
 
 

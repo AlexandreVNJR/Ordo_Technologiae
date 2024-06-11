@@ -29,16 +29,14 @@
               <ul class="navbar">
                 <h2>Olhos sempre abertos, Agente!</h2>
                 <li>
-                  <a class="agora">Assitir</a>
+                  <a class="agora">Assistir</a>
                 </li>
                 <li>
                   <a href="Quiz.html">Quiz</a>
                 </li>
+               
                 <li>
-                  <a href="ChatGlobal.html">Chat Global</a>
-                </li>
-                <li>
-                  <a href="">Sair</a>
+                  <a href="../index.html">Sair</a>
                 </li>
               </ul>
             </div>
@@ -80,7 +78,6 @@
                         
                          <br>
                         <button class="elemento" onclick="assistir()">Assistir episódios</button>
-                        <button class="elemento" onclick="continuar()">Continuar Assistindo</button> <br><br>
 
                         <div id="div_mensagem" class="mensagem"></div></p>
                        
@@ -331,47 +328,6 @@
         }
         
     }
-    function assitir(){
-        
 
-
-        fetch("/dashboard/Assistir.html", {
-      //método dessa fetch , insert, postar
-      method: "GET",
-
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      //permite mandar valores
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        acertosServer: acertos,
-        errosServer: erros,
-      }),
-    })
-    //acontece depois da rota
-    // resultado tranformado em json
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          console.log("Acertos e erros cadastrados")
-
-        } else {
-          alert( "Houve um erro ao tentar realizar o cadastro!");
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
-      });
-    }
 
 </script>
-
-tempoUsuarioServer
-tempoCorrespondenteServer
-episodioServer
-tempServer

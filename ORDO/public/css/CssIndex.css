@@ -315,10 +315,10 @@ body {
   /* display: none; */
   position: relative;
   top: -80px;
-  /* left:170px; */
+  right: 40%;
   /* padding:2px; */
   line-height: 15px;
-  background: #333;
+  /* background: #333; */
   color: #fff;
   display: block;
   /* width:120px; */

@@ -10,7 +10,7 @@
 
 
     <link rel="stylesheet" href="./../css/CssQuiz.css">
-    
+
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
@@ -32,72 +32,70 @@
     <div class="janela">
         <div class="header">
             <div class="container">
-              <ul class="navbar">
-                <h2>Olhos sempre abertos, Agente!</h2>            
-                <a href="./Assistir.html">
-                    Assitir
-                </a>
-                <a class=" agora">
+                <ul class="navbar">
+                    <h2>Olhos sempre abertos, Agente!</h2>
+                    <a href="./Assistir.html">
+                        Assitir
+                    </a>
+                    <a class=" agora">
 
-                    Quiz
-                </a>
-                <a href="./ChatGlobal.html">
-                    Chat Global
-                </a>
-                Sair
-            
-            </ul>
+                        Quiz
+                    </a>
+                    <a href="../index.html">Sair</a>
+                    
+
+                </ul>
+            </div>
         </div>
+
     </div>
+    <div class=" dash">
+        <div class=" socialA">
+            <div class=" containerA">
+                <div class=" cardA">
+                    <h4>Como Funciona?</h4>
+                    <p> Para validar os conhecimentos do usuário sobre o universo de Ordem Paranomal ele poderá
+                        responder questões relacionadas ao tema e verificar se precisa revisar os conteúdos do site.
+                    </p>
+                </div>
+                <div class=" sectionB">
+                    <div class=" cardB">
+                        <div class=" questions-container hide">
+                            <span class="question">Pergunta</span>
+                            <div class=" answers-container">
+                                <button class=" answer button">Resposta1</button>
+                                <button class=" answer button">Resposta2</button>
+                                <button class=" answer button">Resposta3</button>
+                                <button class=" answer button">Resposta4</button>
+                            </div>
+                        </div>
+                        <div class=" controls-container">
+                            <button class=" start-quiz button" onclick="startGame()">Iniciar Quiz</button>
+                            <button class=" next-question button hide">Próxima pergunta</button>
+                        </div>
 
-        </div>
-        <div class=" dash">
-            <div class=" socialA">
-                <div class=" containerA">
-                    <div class=" cardA">
-                        <h4>Como Funciona?</h4>
-                        <p> Para validar os conhecimentos do usuário sobre o universo de Ordem Paranomal ele poderá
-                            responder questões relacionadas ao tema e verificar se precisa revisar os conteúdos do site.
-                        </p>
+
+
+
+
+
+
+
+
                     </div>
-                    <div class=" sectionB">
-                        <div class=" cardB">
-                            <div class=" questions-container hide">
-                                <span class="question">Pergunta</span>
-                                <div class=" answers-container">
-                                    <button class=" answer button">Resposta1</button>
-                                    <button class=" answer button">Resposta2</button>
-                                    <button class=" answer button">Resposta3</button>
-                                    <button class=" answer button">Resposta4</button>
-                                </div>
-                            </div>
-                            <div class=" controls-container">
-                                <button class=" start-quiz button" onclick="startGame()">Iniciar Quiz</button>
-                                <button class=" next-question button hide">Próxima pergunta</button>
-                            </div>
-                            <div class="paiGrafico">
-                                <div id="coiso" sty class="grafico  ">
-                                    <h2> Pontuação Atual </h2>
-                                    <canvas width="50px" height="50px" id="myChart"></canvas>
-                                </div>
-                                <div id="apiGrafico" class="apiGrafico  ">
-                                    <h2> Melhor pontuação </h2>
-                                    <canvas width="50px" height="50px" id="myChart2"></canvas>
-                                </div>
-                            </div>
-                            
-                           
-
-
-
-
-
+                </div>
+                <div class=" sectionB">
+                    <div class=" cardB">
+                        <div id="coiso" sty class="grafico  ">
+                            <h2> Última Pontuação</h2>
+                            <canvas width="50px" height="50px" id="myChart"></canvas>
                         </div>
                     </div>
                 </div>
-
-
             </div>
+
+
+        </div>
 
 
 </body>
@@ -106,121 +104,118 @@
 
 <script>
 
-    
     const questions = [
         {
-           question: "Quais as duas principais organizações no universo de ordem?",
-           answer: [
-            {text: "Ordo Veritatis e Ordo Maglitas",correct: false},
-            {text: "Ordo Realitas e Escriptas",correct: true},
-            {text: "Chitãozinho e Xororó",correct: false},
-            {text: "Ordem do mal e Ordem do bem",correct: false}
-           ]
+            question: "Quais as duas principais organizações no universo de ordem?",
+            answer: [
+                { text: "Ordo Veritatis e Ordo Maglitas", correct: false },
+                { text: "Ordo Realitas e Escriptas", correct: true },
+                { text: "Chitãozinho e Xororó", correct: false },
+                { text: "Ordem do mal e Ordem do bem", correct: false }
+            ]
 
         },
         {
-           question: "Por que o nome da Ordem é escrito em latim?",
-           answer: [
-            {text: "Foi fundada na itália",correct: true},
-            {text: "Um fantasma mandou",correct: false},
-            {text: "O chefe quis",correct: false},
-            {text: "Eles gostavam de pizza",correct: false}
-           ]
+            question: "Por que o nome da Ordem é escrito em latim?",
+            answer: [
+                { text: "Foi fundada na itália", correct: true },
+                { text: "Um fantasma mandou", correct: false },
+                { text: "O chefe quis", correct: false },
+                { text: "Eles gostavam de pizza", correct: false }
+            ]
 
         },
         {
-           question: "Qual elemento é responsável pelo tempo?",
-           answer: [
-            {text: "5 Elemento",correct: false},
-            {text: "Água",correct: false},
-            {text: "Morte",correct: true},
-            {text: "Energia",correct: false}
-           ]
+            question: "Qual elemento é responsável pelo tempo?",
+            answer: [
+                { text: "5 Elemento", correct: false },
+                { text: "Água", correct: false },
+                { text: "Morte", correct: true },
+                { text: "Energia", correct: false }
+            ]
 
         },
         {
-           question: '"Saber tudo é perder tudo" Esta frase faz referencia a qual elemento?',
-           answer: [
-            {text: "Conhecer",correct: false},
-            {text: "Conhecimento",correct: true},
-            {text: "Sangue",correct: false},
-            {text: "Fogo",correct: false}
-           ]
+            question: '"Saber tudo é perder tudo" Esta frase faz referencia a qual elemento?',
+            answer: [
+                { text: "Conhecer", correct: false },
+                { text: "Conhecimento", correct: true },
+                { text: "Sangue", correct: false },
+                { text: "Fogo", correct: false }
+            ]
 
         },
         {
-           question: "Qual temporada se passa no ano de 1997?",
-           answer: [
-            {text: "Avenida Brasil",correct: false},
-            {text: "Atividade Paranormal",correct: false},
-            {text: "Calamidade",correct: false},
-            {text: "Sinais do Outro Lado",correct: true}
-           ]
+            question: "Qual temporada se passa no ano de 1997?",
+            answer: [
+                { text: "Avenida Brasil", correct: false },
+                { text: "Atividade Paranormal", correct: false },
+                { text: "Calamidade", correct: false },
+                { text: "Sinais do Outro Lado", correct: true }
+            ]
 
         },
         {
-           question: "Em qual temporada há uma investigação sobre um pintor que desapareceu em uma ilha?",
-           answer: [
-            {text: "O Segredo na Ilha",correct: true},
-            {text: "Lost",correct: false},
-            {text: "O Segredo na Floresta",correct: false},
-            {text: "Quarentena",correct: false}
-           ]
+            question: "Em qual temporada há uma investigação sobre um pintor que desapareceu em uma ilha?",
+            answer: [
+                { text: "O Segredo na Ilha", correct: true },
+                { text: "Lost", correct: false },
+                { text: "O Segredo na Floresta", correct: false },
+                { text: "Quarentena", correct: false }
+            ]
 
         },
         {
-           question: "Qual personagem apareceu em quatro temporadas diferentes a partir de OSNF?",
-           answer: [
-            {text: "Thiago Fritz",correct: false},
-            {text: "Arthur Cervero",correct: true},
-            {text: "Dante",correct: false},
-            {text: "Kaiser",correct: false}
-           ]
+            question: "Qual personagem apareceu em quatro temporadas diferentes a partir de OSNF?",
+            answer: [
+                { text: "Thiago Fritz", correct: false },
+                { text: "Arthur Cervero", correct: true },
+                { text: "Dante", correct: false },
+                { text: "Kaiser", correct: false }
+            ]
 
         },
         {
-           question: "Qual personagem se sacrificou para salvar Thiago Fritz da Aracnasita?",
-           answer: [
-            {text: "Sr. Veríssimo",correct: false},
-            {text: "Christopher",correct: true},
-            {text: "Joui",correct: false},
-            {text: "Jonathan Walker",correct: false}
-           ]
+            question: "Qual personagem se sacrificou para salvar Thiago Fritz da Aracnasita?",
+            answer: [
+                { text: "Sr. Veríssimo", correct: false },
+                { text: "Christopher", correct: true },
+                { text: "Joui", correct: false },
+                { text: "Jonathan Walker", correct: false }
+            ]
 
         },
         {
-           question: "Qual monstro é responsável por representar o elemento de morte?",
-           answer: [
-            {text: "Ceifador",correct: false},
-            {text: "Deus da Morte",correct: true},
-            {text: "Contra-Tempo",correct: false},
-            {text: "Ciborgue",correct: false}
-           ]
+            question: "Qual monstro é responsável por representar o elemento de morte?",
+            answer: [
+                { text: "Ceifador", correct: false },
+                { text: "Deus da Morte", correct: true },
+                { text: "Contra-Tempo", correct: false },
+                { text: "Ciborgue", correct: false }
+            ]
 
         },
         {
-           question: " Qual criatura é manifestada a partir do medo de ser seguido?",
-           answer: [
-            {text: "Anjo",correct: false},
-            {text: "Rastejador Sombrio",correct: true},
-            {text: "Silhueta",correct: false},
-            {text: "Magistrada",correct: false}
-           ]
+            question: " Qual criatura é manifestada a partir do medo de ser seguido?",
+            answer: [
+                { text: "Anjo", correct: false },
+                { text: "Rastejador Sombrio", correct: true },
+                { text: "Silhueta", correct: false },
+                { text: "Magistrada", correct: false }
+            ]
 
         }
     ];
-    const acertosLista = [];
-    const errosLista = [];
     const $startGameButton = document.querySelector(".start-quiz")
     const $questionsContainer = document.querySelector(".questions-container")
     const $answersContainer = document.querySelector(".answers-container")
     const $questionText = document.querySelector(".question")
     const $nextQuestionButton = document.querySelector(".next-question")
 
-    $startGameButton.addEventListener("click",startGame)
-    $nextQuestionButton.addEventListener("click",displayNextQuestion)
+    $startGameButton.addEventListener("click", startGame)
+    $nextQuestionButton.addEventListener("click", displayNextQuestion)
 
-    function startGame(){
+    function startGame() {
         $startGameButton.classList.add("hide")
         $questionsContainer.classList.remove("hide")
         displayNextQuestion()
@@ -228,25 +223,25 @@
     let currentQuestionIndex = 0
     let acertos = 0
     const totalQuestion = questions.length
-    let erros = totalQuestion - acertos;
+    // let erros = totalQuestion - acertos;
 
-    
-    
 
-  
-    function displayNextQuestion(){
+
+
+
+    function displayNextQuestion() {
         resetState()
 
-        if(questions.length == currentQuestionIndex){
+        if (questions.length == currentQuestionIndex) {
             return finishGame()
         }
 
         $questionText.textContent = questions[currentQuestionIndex].question
         questions[currentQuestionIndex].answer.forEach(answer => {
             const newAnswer = document.createElement("button")
-            newAnswer.classList.add("button","answer")
+            newAnswer.classList.add("button", "answer")
             newAnswer.textContent = answer.text
-            if(answer.correct){
+            if (answer.correct) {
                 newAnswer.dataset.correct = answer.correct
             }
             $answersContainer.appendChild(newAnswer)
@@ -254,8 +249,8 @@
             newAnswer.addEventListener("click", selectAnswer)
         })
     }
-    function resetState(){
-        while($answersContainer.firstChild){
+    function resetState() {
+        while ($answersContainer.firstChild) {
             $answersContainer.removeChild($answersContainer.firstChild)
         }
 
@@ -265,39 +260,36 @@
         $nextQuestionButton.classList.add("hide")
     }
 
-    function selectAnswer(event){
+    function selectAnswer(event) {
         const answerClicked = event.target
 
-        if(answerClicked.dataset.correct){
+        if (answerClicked.dataset.correct) {
             document.body.classList.add("correct")
             acertos++
-        }else{
+        } else {
             document.body.classList.add("incorrect")
 
         }
 
         document.querySelectorAll(".answer").forEach(button => {
-            if(button.dataset.correct){
+            if (button.dataset.correct) {
                 button.classList.add("correct")
-                
-            }else{
+
+            } else {
                 button.classList.add("incorrect")
 
             }
             button.disabled = true
         })
-        
+
         $nextQuestionButton.classList.remove("hide")
-        
+
         currentQuestionIndex++
     }
 
 
-    function finishGame(){
-        let erros = totalQuestion - acertos;
-        acertosLista.push(acertos);
-        errosLista.push(erros);
-
+    function finishGame() {
+        var erros = totalQuestion - acertos;
         const labels = [
         'Acertos',
         'Erros',
@@ -315,35 +307,10 @@
     new Chart("myChart", {
   type: "pie",
   data: {
-    labels: xValues,
+    labels: ['Usuario 1'],
     datasets: [{
       backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "Gabarito"
-    }
-  }
-});
-
-var xValues = ["Acertos", "Erros"];
-    var yValues = [acertos,erros];
-    var barColors = [
-    "green",
-    "red"
-  
-];
-
-    new Chart("myChart2", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
+      data: [erros, acertos]
     }]
   },
   options: {
@@ -355,22 +322,21 @@ var xValues = ["Acertos", "Erros"];
 });
 
 
-        
-        const performance = Math.floor(acertos *100  / totalQuestion)
+        const performance = Math.floor(acertos * 100 / totalQuestion)
 
         let mensagem = ""
 
-        switch(true){
-            case(performance >=90):
+        switch (true) {
+            case (performance >= 90):
                 mensagem = "Exelente"
                 break
-            case(performance >=70):
+            case (performance >= 70):
                 mensagem = "Muito Bom"
                 break
-                case(performance >=50):
+            case (performance >= 50):
                 mensagem = "Bom"
                 break
-                default: 
+            default:
                 mensagem = "Melhore"
         }
         $questionsContainer.innerHTML = `
@@ -386,99 +352,139 @@ var xValues = ["Acertos", "Erros"];
         
 
         `
-        coiso.classList.remove("hide")
-        apiGrafico.classList.remove("hide")
-        gabarito()
-
-    }
-
-    function gabarito(){
-        
-        console.log(acertosLista)
-        console.log(errosLista)
 
 
-        fetch("/dashboard/Quiz.html", {
-      //método dessa fetch , insert, postar
-      method: "POST",
-
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      //permite mandar valores
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        acertosServer: acertos,
-        errosServer: erros,
-      }),
-    })
-    //acontece depois da rota
-    // resultado tranformado em json
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          console.log("Acertos e erros cadastrados")
-
-        } else {
-          alert( "Houve um erro ao tentar realizar o cadastro!");
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
-      });
-    }
-
-    function mostrar(){
-        
-        console.log(acertosLista)
-        console.log(errosLista)
+        console.log(acertos)
+        console.log(erros)
 
 
-        fetch("/dashboard/Quiz.html", {
-      //método dessa fetch , insert, postar
-      method: "GET",
+        fetch("/quiz/gabarito", {
+            //método dessa fetch , insert, postar
+            method: "POST",
 
-      headers: {
-        "Content-Type": "application/json",
-      },
+            headers: {
+                "Content-Type": "application/json",
+            },
 
-      //permite mandar valores
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        acertosServer: acertos,
-        errosServer: erros,
-      }),
-    })
-    //acontece depois da rota
-    // resultado tranformado em json
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+            //permite mandar valores
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                acertosServer: acertos,
+                errosServer: erros,
+                idUsuarioServer: sessionStorage.ID_USUARIO
+            }),
+        })
+            //acontece depois da rota
+            // resultado tranformado em json
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
 
-        if (resposta.ok) {
-          console.log("Acertos e erros cadastrados")
+                if (resposta.ok) {
+                    console.log("Acertos e erros cadastrados")
 
-        } else {
-          alert( "Houve um erro ao tentar realizar o cadastro!");
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
-      });
-    }
 
-   
-    
+
+                } else {
+                    alert("Houve um erro ao tentar realizar o cadastro!");
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
 
     
 
 
+    // console.log(acertos)
+    // console.log(erros)
+
+            var timeout = setTimeout(finishGame())
+    fetch("/quiz/mostrar", {
+        //método dessa fetch , insert, postar
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        //acontece depois da rota
+        // resultado tranformado em json
+        .then(function (resposta) {
+            
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                });
+                criarGraficos()
+            }
+            else {
+                alert("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }
+
+            .catch(function (response) {
+                console.log(`#ERRO: ${response}`);
+                // finalizarAguardar();
+            }));
+
+//             function plotarGrafico(resposta){
+//             let acertosLista = [];
+//             let errosLista = [];
+
+//             resposta.forEach((quiz) =>{
+//                 acertosLista.push(quiz.acertos);
+//                 errosLista.push(quiz.erros);
+//   })
+}
+
+        // const labels = [
+        //     'Acertos',
+        //     'Erros',
+
+        // ];
+
+        // var xValues = ["Acertos", "Erros"];
+        // var yValues = [acertosLista, errosLista];
+        // var barColors = [
+        //     "green",
+        //     "red"
+
+        // ];
+
+        // new Chart("myChart", {
+        //     type: "pie",
+        //     data: {
+        //         labels: xValues,
+        //         datasets: [{
+        //             backgroundColor: barColors,
+        //             data: [erros, acertos]
+        //         }]
+        //     },
+        //     options: {
+        //         title: {
+        //             display: true,
+        //             text: "Mostrar"
+        //         }
+        //     }
+        // });}
+        
+        
 
 
- 
+    
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
