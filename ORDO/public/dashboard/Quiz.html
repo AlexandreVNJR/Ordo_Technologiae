@@ -86,9 +86,9 @@
                 </div>
                 <div class=" sectionB">
                     <div class=" cardB">
-                        <div id="coiso" sty class="grafico  ">
+                        <div class="grafico   ">
                             <h2> Última Pontuação</h2>
-                            <canvas width="50px" height="50px" id="myChart"></canvas>
+                            <canvas width="80%" height="80%" id="myChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -290,36 +290,37 @@
 
     function finishGame() {
         var erros = totalQuestion - acertos;
-        const labels = [
-        'Acertos',
-        'Erros',
         
-    ];
+//         const labels = [
+//         'Acertos',
+//         'Erros',
+        
+//     ];
 
-    var xValues = ["Acertos", "Erros"];
-    var yValues = [acertos,erros];
-    var barColors = [
-    "green",
-    "red"
+//     var xValues = ["Acertos", "Erros"];
+//     var yValues = [acertos,erros];
+//     var barColors = [
+//     "green",
+//     "red"
   
-];
+// ];
 
-    new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: ['Usuario 1'],
-    datasets: [{
-      backgroundColor: barColors,
-      data: [erros, acertos]
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "Gabarito"
-    }
-  }
-});
+//     new Chart("myChart", {
+//   type: "pie",
+//   data: {
+//     labels: ['Usuario 1'],
+//     datasets: [{
+//       backgroundColor: barColors,
+//       data: [erros, acertos]
+//     }]
+//   },
+//   options: {
+//     title: {
+//       display: true,
+//       text: "Gabarito"
+//     }
+//   }
+// });
 
 
         const performance = Math.floor(acertos * 100 / totalQuestion)
@@ -401,13 +402,16 @@
     // console.log(acertos)
     // console.log(erros)
 
-            var timeout = setTimeout(finishGame())
     fetch("/quiz/mostrar", {
         //método dessa fetch , insert, postar
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
+                            
+        body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO
+            }),
     })
         //acontece depois da rota
         // resultado tranformado em json
@@ -417,59 +421,50 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                });
-                criarGraficos()
+
+            });
+                criarGraficos(acertos, erros)
             }
             else {
                 alert("Houve um erro ao tentar realizar o cadastro!");
             }
         }
+);
 
-            .catch(function (response) {
-                console.log(`#ERRO: ${response}`);
-                // finalizarAguardar();
-            }));
+            
 
-//             function plotarGrafico(resposta){
-//             let acertosLista = [];
-//             let errosLista = [];
+        function criarGraficos(acertos,erros){
+            const labels = [
+            'Acertos',
+            'Erros',
 
-//             resposta.forEach((quiz) =>{
-//                 acertosLista.push(quiz.acertos);
-//                 errosLista.push(quiz.erros);
-//   })
-}
+        ];
 
-        // const labels = [
-        //     'Acertos',
-        //     'Erros',
+        var xValues = ["Acertos", "Erros"];
+        var yValues = [acertos, erros];
+        var barColors = [
+            "purple",
+            "darkpurple"
 
-        // ];
+        ];
 
-        // var xValues = ["Acertos", "Erros"];
-        // var yValues = [acertosLista, errosLista];
-        // var barColors = [
-        //     "green",
-        //     "red"
-
-        // ];
-
-        // new Chart("myChart", {
-        //     type: "pie",
-        //     data: {
-        //         labels: xValues,
-        //         datasets: [{
-        //             backgroundColor: barColors,
-        //             data: [erros, acertos]
-        //         }]
-        //     },
-        //     options: {
-        //         title: {
-        //             display: true,
-        //             text: "Mostrar"
-        //         }
-        //     }
-        // });}
+        new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Mostrar"
+                }
+            }
+        });
+        }}
         
         
 

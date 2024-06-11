@@ -3,9 +3,7 @@ var quizModel = require("../models/quizModel");
 
 
 function mostrar(req, res) {
-  var idUsuario = req.params.idUsuario;
-    
-
+  var idUsuario = req.body.idUsuarioServer;
   quizModel.mostrar(idUsuario)
     .then(function (resultado) {
       // precisamos informar que o resultado voltará para o front-end como uma resposta em json
